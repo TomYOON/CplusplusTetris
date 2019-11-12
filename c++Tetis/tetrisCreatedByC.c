@@ -409,26 +409,30 @@ int make_new_block()
 
 int strike_check(int shape, int angle, int x, int y)
 {
-	int i, j;
+	int i, j; // 이중 for문에 사용
+	// 블록의 4x4 공간의 각 칸이 이미 맵에 채워져 있는 칸인지에 대한 
+	// 정보 저장 (채워져있으면 1, 아니면 0)
 	int block_dat;
 
+	// 블록의 4x4 공간의 16개 칸 하나하나에 대해 
+	// 검사를 하기 위해 이중 for문 사용
 	for (i = 0; i < 4; i++)
 	{
 		for (j = 0; j < 4; j++)
 		{
 			int moved_x = x + j;
 			int moved_y = y + i;
+			// 해당 칸이 맵 테투리인 경우,
+			// 맵 테투리도 채워져있는 칸이므로 1 대입
+			// 맵 테두리가 아닌 맵 내부범위라면,
+			// 해당 칸이 이미 블록이 쌓인 칸이라면 1, 아니면 0을 대입
+			// 맵 밖의 위치이면, 0을 대입
 			if ((moved_x == 0) || (moved_x == 13))
 				block_dat = 1;
 			else if (moved_y >= 0 && moved_y < 21 && moved_x >= 0 && moved_x < 14)
 				block_dat = total_block[moved_y][moved_x];
 			else
 				block_dat = 0;
-
-			/*if ((moved_x == 0) || (moved_x == 13))
-				block_dat = 1;
-			else
-				block_dat = total_block[y + i][x + j];*/
 
 
 			if ((block_dat == 1) && (block[shape][angle][i][j] == 1))																							//좌측벽의 좌표를 빼기위함
