@@ -36,7 +36,8 @@ public:
 	void set_next_shape(const int& next_shape);
 	//char* get_cur_tetromino() const;
 	const char(&get_cur_tetromino())[4][4];
-	char* get_next_tetromino() const;
+	const char(&get_next_tetromino())[4][4];
+	/*char* get_next_tetromino() const;*/
 	
 };
 

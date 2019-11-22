@@ -104,18 +104,14 @@ void LogoContainer::show_logo()
 
 			for (j = 0; j < 5; j++)
 			{
-				gotoxy(18, 14 + j);
-				printf("                                                          ");
+				gotoxy(0, 14 + j);
+				printf("                                                                    ");
 
 
 			}
 			for (int k = 1; k < 5; k++){
-				show_random_block(6 * k, 14);
+				show_random_block(7 * k, 14);
 			}
-			/*show_cur_block(rand() % 7, rand() % 4, 6, 14);
-			show_cur_block(rand() % 7, rand() % 4, 12, 14);
-			show_cur_block(rand() % 7, rand() % 4, 19, 14);
-			show_cur_block(rand() % 7, rand() % 4, 24, 14);*/
 		}
 		if (_kbhit())
 			break;

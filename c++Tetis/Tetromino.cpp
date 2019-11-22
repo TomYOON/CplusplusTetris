@@ -35,7 +35,12 @@ const char(&Tetromino::get_cur_tetromino())[4][4]
 	return m_tetrominos[m_shape][m_angle];
 }
 
-char* Tetromino::get_next_tetromino() const
+const char(&Tetromino::get_next_tetromino())[4][4]
 {
-	return (char*) m_tetrominos[m_next_shape][m_angle];
+	return m_tetrominos[m_next_shape][m_angle];
 }
+
+//char* Tetromino::get_next_tetromino() const
+//{
+//	return (char*) m_tetrominos[m_next_shape][m_angle];
+//}
