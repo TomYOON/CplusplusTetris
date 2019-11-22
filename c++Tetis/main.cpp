@@ -7,11 +7,11 @@
 #include <Windows.h>
 using namespace std;
 
-#define EXT_KEY         0xffffffe0   //확장키 인식값 
-#define KEY_LEFT      0x4b
-#define KEY_RIGHT      0x4d
-#define KEY_UP         0x48
-#define KEY_DOWN      0x50
+const unsigned int EXT_KEY = 0xffffffe0;
+const int KEY_LEFT = 0x4b;
+const int  KEY_RIGHT = 0x4d;
+const int  KEY_UP = 0x48;
+const int  KEY_DOWN = 0x50;
 
 int main(void) {
 	LogoContainer lc;
