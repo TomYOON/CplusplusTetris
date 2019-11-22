@@ -30,6 +30,7 @@ private:
 	};
 public:
 	Tetromino();
+	~Tetromino();
 	void set_shape(const int& shape);
 	void set_angle(const int& angle);
 	int get_shape() const;

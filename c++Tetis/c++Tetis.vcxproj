@@ -22,6 +22,7 @@
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="LogoContainer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SelectLevelContainer.cpp" />
     <ClCompile Include="tetrisCreatedByC.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -31,6 +32,7 @@
   <ItemGroup>
     <ClInclude Include="Container.h" />
     <ClInclude Include="LogoContainer.h" />
+    <ClInclude Include="SelectLevelContainer.h" />
     <ClInclude Include="Tetromino.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

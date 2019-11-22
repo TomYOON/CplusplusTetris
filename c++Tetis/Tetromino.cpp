@@ -4,6 +4,10 @@ Tetromino::Tetromino()
 	:m_shape(0),m_next_shape(0),m_angle(0)
 {
 }
+
+Tetromino::~Tetromino()
+{
+}
  
 void Tetromino::set_shape(const int& shape)
 {

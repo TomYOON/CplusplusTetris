@@ -56,7 +56,7 @@ void LogoContainer::show_random_block(const int& x, const int& y)
 }
 
 LogoContainer::LogoContainer()
-:LogoContainer(0,0)
+:Container()
 {
 }
 
@@ -110,7 +110,7 @@ void LogoContainer::show_logo()
 
 			}
 			for (int k = 1; k < 5; k++){
-				show_random_block(7 * k, 14);
+				show_random_block(6 * k, 14);
 			}
 		}
 		if (_kbhit())

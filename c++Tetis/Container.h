@@ -5,8 +5,8 @@ protected:
 	int m_ab_x;
 	int m_ab_y;
 public:
-	Container();
-	Container(const int& ab_x, const int& ab_y);
+	//Container();
+	Container(const int& ab_x = 5, const int& ab_y = 1);
 	void setColor(const int& color);
 	void gotoxy(const int& x, const int& y);
 	
