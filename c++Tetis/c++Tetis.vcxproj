@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Container.cpp" />
+    <ClCompile Include="GameContainer.cpp" />
     <ClCompile Include="LogoContainer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SelectLevelContainer.cpp" />
@@ -32,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Container.h" />
+    <ClInclude Include="GameContainer.h" />
     <ClInclude Include="LogoContainer.h" />
     <ClInclude Include="SelectLevelContainer.h" />
     <ClInclude Include="Stage.h" />
