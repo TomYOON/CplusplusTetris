@@ -4,7 +4,6 @@ class Tetromino
 private:
 	int m_shape;
 	int m_angle;
-	int m_next_shape;
 	const char m_tetrominos[7][4][4][4] = {
 		//막대모양 1
 		1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,	1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,	1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,	1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -35,11 +34,8 @@ public:
 	void set_angle(const int& angle);
 	int get_shape() const;
 	int get_angle() const;
-	void set_next_shape(const int& next_shape);
-	int get_next_shape() const;
 	//char* get_cur_tetromino() const;
-	const char(&get_cur_tetromino())[4][4];
-	const char(&get_next_tetromino())[4][4];
+	const char(&get_tetromino())[4][4];
 	/*char* get_next_tetromino() const;*/
 	
 };

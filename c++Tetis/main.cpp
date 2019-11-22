@@ -53,7 +53,7 @@ int main(void) {
 							if (gc.strike_check() == 1) {
 								while (gc.strike_check()) gc.set_tetromino_x(gc.get_tetromino_x() - 1);
 							}  
-							gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //변경된 블럭 출력
+							gc.show_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //변경된 블럭 출력
 						}
 						break;
 					case KEY_LEFT:      //왼쪽으로 이동
@@ -64,7 +64,7 @@ int main(void) {
 							if (gc.strike_check() == 1)  //블럭이랑 충돌할 경우 원상태로 x++
 								gc.set_tetromino_x(gc.get_tetromino_x() + 1);
 
-							gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //수정된 블럭 보여줌
+							gc.show_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //수정된 블럭 보여줌
 						}
 						break;
 					case KEY_RIGHT:      //오른쪽으로 이동
@@ -75,12 +75,12 @@ int main(void) {
 							gc.set_tetromino_x(gc.get_tetromino_x() + 1);   // x좌표 이동
 							if (gc.strike_check() == 1)   //블럭이랑 충돌시
 								gc.set_tetromino_x(gc.get_tetromino_x() - 1);        //원상태
-							gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //수정된 블럭 보여줌
+							gc.show_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //수정된 블럭 보여줌
 						}
 						break;
 					case KEY_DOWN:      //아래로 이동
 						is_gameover = gc.move_tetromino(); //game_over판단 1==over, 0==not over
-						gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //수정된 블럭보여줌
+						gc.show_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //수정된 블럭보여줌
 						break;
 					}
 				}
@@ -90,7 +90,7 @@ int main(void) {
 					{
 						is_gameover = gc.move_tetromino();   //game_over 판단
 					}
-					gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());
+					gc.show_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());
 				}
 			}
 			const Stage cur_stage = gc.get_stage_data()[gc.get_level()];
@@ -98,7 +98,7 @@ int main(void) {
 			{
 				is_gameover = gc.move_tetromino();
 
-				gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());
+				gc.show_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());
 			}
 
 			if (cur_stage.get_clear_line() <= gc.get_lines())   //클리어 스테이지, 각 레벨별 라인과 부순 라인이 같으면 클리어라고 판단
