@@ -2,18 +2,97 @@
 #include <conio.h>
 #include <iostream>
 #include <Windows.h>
+#include <time.h>
 using namespace std;
+
+GameContainer::GameContainer()
+	:GameContainer(5,1)
+{
+}
 
 GameContainer::~GameContainer()
 {
 }
 
-GameContainer::GameContainer(const int& ab_x = 5, const int& ab_y = 1)
-	:Container(ab_x, ab_y), m_level(0), m_lines(0), m_score(0), m_tetromino()
+GameContainer::GameContainer(const int& ab_x, const int& ab_y)
+	:Container(ab_x, ab_y), m_level(0), m_lines(0), m_score(0), m_tetromino(),
+	tetromino_x(5), tetromino_y(-3)
 {
 }
 
-void GameContainer::show_cur_tetromino()
+int GameContainer::get_tetromino_x() const
+{
+	return tetromino_x;
+}
+
+int GameContainer::get_tetromino_y() const
+{
+	return tetromino_y;
+}
+
+int GameContainer::get_level() const
+{
+	return m_level;
+}
+
+int GameContainer::get_lines() const
+{
+	return m_lines;
+}
+
+void GameContainer::set_level(const int& level)
+{
+	m_level = level;
+}
+
+void GameContainer::set_lines(const int& lines)
+{
+	m_lines = lines;
+}
+
+void GameContainer::set_tetromino_x(const int& x)
+{
+	tetromino_x = x;
+}
+
+void GameContainer::set_tetromino_y(const int& y)
+{
+	tetromino_y = y;
+}
+
+void GameContainer::init()
+{
+	int i, j;
+
+	srand((unsigned)time(NULL));
+
+	// 화면 초기화
+	for (i = 0; i < 20; i++)
+	{
+		for (j = 0; j < 14; j++)
+		{
+			if ((j == 0) || (j == 13))
+			{
+				m_total_block[i][j] = 1;
+			}
+			else {
+				m_total_block[i][j] = 0;
+			}
+		}
+	}
+
+	//화면의 제일 밑의 줄은 1로 채운다.
+	for (j = 0; j < 14; j++)
+		m_total_block[20][j] = 1;
+
+	//전역변수 초기화
+	m_level = 0;
+	m_lines = 0;
+	m_ab_x = 5;
+	m_ab_y = 1;
+}
+
+void GameContainer::show_cur_tetromino(const int& x, const int& y)
 {
 	// 해당 블록에 맞는 색깔을 출력
 	switch (m_tetromino.get_shape())
@@ -50,7 +129,7 @@ void GameContainer::show_cur_tetromino()
 				continue;
 			if (m_tetromino.get_cur_tetromino()[j][i] == 1)
 			{
-				gotoxy((i + tetromino_x) * 2 + m_ab_x, j + tetromino_y + m_ab_y);
+				gotoxy((i + x) * 2 + m_ab_x, j + y + m_ab_y);
 				printf("■");
 
 			}
@@ -98,7 +177,7 @@ void GameContainer::show_total_block()
 			}
 			gotoxy((j * 2) + m_ab_x, i + m_ab_y);
 			// 블록이 앉은 자리는 출력을 한다.
-			if (m_tetromino.get_cur_tetromino()[j][i] == 1)
+			if (m_total_block[i][j] == 1)
 			{
 				printf("■");
 			}
@@ -136,21 +215,47 @@ void GameContainer::show_next_tetromino()
 		}
 	}
 	// 박스 안에 다음 블록의 모양을 출력
-	show_next_tetromino();
+	show_cur_tetromino(15,1);
 }
 
-int GameContainer::make_new_tetromino()
+void GameContainer::make_cur_tetromino()
+{
+	int i;
+	i = rand() % 100;
+	if (i <= stage_data[m_level].get_stick_rate()) {      //막대기 나올확률 계산
+		m_tetromino.set_shape(0);
+		return;                     //막대기 모양으로 리턴
+	}
+	m_tetromino.set_shape((rand() % 6) + 1);
+}
+
+void GameContainer::make_next_tetromino()
 {
 	int shape;
 	int i;
 	i = rand() % 100;
-	if (i <= stage_data[m_level].get_stick_rate())      //막대기 나올확률 계산
-		return 0;                     //막대기 모양으로 리턴
+	if (i <= stage_data[m_level].get_stick_rate()) {      //막대기 나올확률 계산
+		m_tetromino.set_next_shape(0);
+		return;                     //막대기 모양으로 리턴
+	}
+	m_tetromino.set_next_shape((rand() % 6) + 1);
+	show_next_tetromino();
 
 	shape = (rand() % 6) + 1;      //shape에는 1~6의 값이 들어감
-	m_tetromino.set_next_shape(shape);
-	show_next_tetromino();
-	return shape;
+	
+	//m_tetromino.set_next_shape(shape);
+	//show_next_tetromino();
+	//return shape;
+
+	//int shape;
+	//int i;
+	//i = rand() % 100;
+	//if (i <= stage_data[level].stick_rate)      //막대기 나올확률 계산
+	//	return 0;                     //막대기 모양으로 리턴
+
+	//shape = (rand() % 6) + 1;      //shape에는 1~6의 값이 들어감
+	//show_next_block(shape);
+	//return shape;
 }
 
 bool GameContainer::strike_check()
@@ -172,23 +277,23 @@ bool GameContainer::strike_check()
 				block_dat = 0;
 
 
-			if ((block_dat == 1) && (m_tetromino.get_cur_tetromino()[j][i] == 1))                                                                     //좌측벽의 좌표를 빼기위함
+			if ((block_dat == 1) && (m_tetromino.get_cur_tetromino()[i][j] == 1))                                                                     //좌측벽의 좌표를 빼기위함
 			{
-				return true;
+				return 1;
 			}
 		}
 	}
-	return false;
+	return 0;
 }
 
 void GameContainer::merge_tetromino()
 {
 	int i, j;
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 4; i++) 
 	{
 		for (j = 0; j < 4; j++)
 		{
-			m_total_block[tetromino_y + i][tetromino_x + j] |= m_tetromino.get_cur_tetromino()[j][i];
+			m_total_block[tetromino_y + i][tetromino_x + j] |= m_tetromino.get_cur_tetromino()[i][j];
 		}
 	}
 	check_full_line();
@@ -207,21 +312,24 @@ int GameContainer::move_tetromino()
 	erase_cur_tetromino();
 
 	tetromino_y++;   //블럭을 한칸 아래로 내림
-	if (strike_check() == true)
+	if (strike_check() == 1)
 	{
 		if (tetromino_y <= 0)   //게임오버
 		{
 			return 1;
 		}
 		(tetromino_y)--;
+		printf("%d, %d", m_tetromino.get_shape(), m_tetromino.get_angle());
 		merge_tetromino();
 		m_tetromino.set_shape(m_tetromino.get_next_shape());
-		m_tetromino.set_next_shape(make_new_tetromino());
+		make_next_tetromino();
+		//m_tetromino.set_next_shape(make_new_tetromino());
 
 		tetromino_start();
 		show_next_tetromino();
 		return 2;
 	}
+	return 0;
 }
 
 void GameContainer::rotate_tetromino()
@@ -313,4 +421,9 @@ void GameContainer::check_full_line()
 			show_gamestat();
 		}
 	}
+}
+
+const Stage(&GameContainer::get_stage_data())[10]
+{
+	return stage_data;
 }
