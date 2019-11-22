@@ -34,8 +34,6 @@ int main(void) {
 	SelectLevelContainer slc;
 	GameContainer gc;
 	Stage stage;
-	gc.init();
-	gc.show_gamestat();;
 
 	int i;
 	int is_gameover = 0;
