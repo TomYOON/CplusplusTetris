@@ -20,12 +20,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Container.cpp" />
-    <ClCompile Include="tetrisCreatedByC.c" />
+    <ClCompile Include="LogoContainer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="tetrisCreatedByC.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Tetromino.cpp" />
     <ClCompile Include="소스.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Container.h" />
+    <ClInclude Include="LogoContainer.h" />
     <ClInclude Include="Tetromino.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

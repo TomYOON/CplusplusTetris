@@ -1,7 +1,7 @@
 #pragma once
 class Container
 {
-private:
+protected:
 	int m_ab_x;
 	int m_ab_y;
 public:

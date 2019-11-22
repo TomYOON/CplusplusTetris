@@ -27,12 +27,21 @@
     <ClCompile Include="Container.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="LogoContainer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tetromino.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Container.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoContainer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
