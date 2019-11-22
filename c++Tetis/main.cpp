@@ -40,7 +40,6 @@ int main(void) {
 				keytemp = _getche();      //무슨키인지 변수에 넣음
 				if (keytemp == EXT_KEY)      //키 입력 범위 확인
 				{
-					keytemp = _getche();
 					switch (keytemp)
 					{
 					case KEY_UP:      //회전하기
