@@ -73,7 +73,7 @@ void LogoContainer::show_logo()
 {
 	int i, j;
 	gotoxy(13, 3);
-	printf("旨收收收收收收收收收收收收收收收收收收收收收收收旬");
+	printf("旨收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收旬");
 	Sleep(100);
 	gotoxy(13, 4);
 	printf("早﹣﹣﹣  ﹣﹣﹣  ﹣﹣﹣   ﹣﹣     ﹣   ﹣  ﹣ 早");
@@ -91,7 +91,7 @@ void LogoContainer::show_logo()
 	printf("早  ﹣    ﹣﹣﹣    ﹣     ﹣  ﹣   ﹣   ﹣  ﹣ 早");
 	Sleep(100);
 	gotoxy(13, 9);
-	printf("曲收收收收收收收收收收收收收收收收收收收收收收收旭");
+	printf("曲收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收旭");
 
 	gotoxy(28, 20);
 	printf("Please Press Any Key~!");

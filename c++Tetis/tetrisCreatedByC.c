@@ -1,6 +1,3 @@
-
-
-
 #include <stdio.h>
 #include <conio.h>
 #include <string.h>
@@ -11,18 +8,18 @@
 //상수 선언
 //*********************************
 
-#define EXT_KEY			0xffffffe0	//확장키 인식값 
-#define KEY_LEFT		0x4b
-#define KEY_RIGHT		0x4d
-#define KEY_UP			0x48
-#define KEY_DOWN		0x50
+#define EXT_KEY         0xffffffe0   //확장키 인식값 
+#define KEY_LEFT      0x4b
+#define KEY_RIGHT      0x4d
+#define KEY_UP         0x48
+#define KEY_DOWN      0x50
 
 //*********************************
 //구조체 선언
 //*********************************
-struct STAGE {		//각 스테이지마다의 난이도 설정
-	int	speed;	//숫자가 낮을수록 속도가 빠르다
-	int stick_rate;		//막대가 나오는 확률 0~99 , 99면 막대기만 나옴
+struct STAGE {      //각 스테이지마다의 난이도 설정
+	int   speed;   //숫자가 낮을수록 속도가 빠르다
+	int stick_rate;      //막대가 나오는 확률 0~99 , 99면 막대기만 나옴
 	int clear_line; // 목표 줄 제거수 
 };
 
@@ -49,53 +46,53 @@ enum {
 //전역변수선언
 //*********************************
 int level; //현재 레벨
-int ab_x, ab_y;	//화면중 블럭이 나타나는 좌표의 절대위치
+int ab_x, ab_y;   //화면중 블럭이 나타나는 좌표의 절대위치
 int block_shape, block_angle, block_x, block_y; // 블록 모양 각도 좌표
 int next_block_shape; // 다음 블록 모양
 int score; // 현재 점수
 int lines; // 제거한 라인 개수
-char total_block[21][14];		//화면에 표시되는 블럭들
+char total_block[21][14];      //화면에 표시되는 블럭들
 struct STAGE stage_data[10]; // 스테이저 정보 구조체 배열
 
 // 7개 모양으로 4개 각도 4X4 표현
 char block[7][4][4][4] = {
 	//막대모양 1
-	1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,	1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,	1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,	1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,
+	1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,   1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,   1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,   1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,
 
 	//네모모양 ㅁ
-	1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,	1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,	1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,	1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,
+	1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,   1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,   1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,   1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,
 
 	//'ㅓ' 모양
-	0,1,0,0,1,1,0,0,0,1,0,0,0,0,0,0,	1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,	1,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,	0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,
+	0,1,0,0,1,1,0,0,0,1,0,0,0,0,0,0,   1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,   1,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,   0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,
 
 	//'ㄱ'모양
-	1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,	1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,	1,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,	0,0,1,0,1,1,1,0,0,0,0,0,0,0,0,0,
+	1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,   1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,   1,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,   0,0,1,0,1,1,1,0,0,0,0,0,0,0,0,0,
 
 	//'ㄴ' 모양
-	1,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,	1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,	0,1,0,0,0,1,0,0,1,1,0,0,0,0,0,0,	1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,
+	1,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,   1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,   0,1,0,0,0,1,0,0,1,1,0,0,0,0,0,0,   1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,
 
 	//'Z' 모양
-	1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,	0,1,0,0,1,1,0,0,1,0,0,0,0,0,0,0,	1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,	0,1,0,0,1,1,0,0,1,0,0,0,0,0,0,0,
+	1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,   0,1,0,0,1,1,0,0,1,0,0,0,0,0,0,0,   1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,   0,1,0,0,1,1,0,0,1,0,0,0,0,0,0,0,
 
 	//'S' 모양
-	0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,	1,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,	0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,	1,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0
+	0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,   1,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,   0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,   1,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0
 
 };
 //*********************************
 //함수 선언
 //*********************************
-int gotoxy(int x, int y);	//커서옮기기
-void SetColor(int color);	//색표현
-int init();					//스테이지 정보 각종변수 초기화 
-int show_cur_block(int shape, int angle, int x, int y);	//진행중인 블럭을 화면에 표시한다
-int erase_cur_block(int shape, int angle, int x, int y);	//블럭 진행의 잔상을 지우기 위한 함수
-int show_total_block();	//쌓여져있는 블럭을 화면에 표시한다.
+int gotoxy(int x, int y);   //커서옮기기
+void SetColor(int color);   //색표현
+int init();               //스테이지 정보 각종변수 초기화 
+int show_cur_block(int shape, int angle, int x, int y);   //진행중인 블럭을 화면에 표시한다
+int erase_cur_block(int shape, int angle, int x, int y);   //블럭 진행의 잔상을 지우기 위한 함수
+int show_total_block();   //쌓여져있는 블럭을 화면에 표시한다.
 int show_next_block(int shape); // 다음 블록이 무엇인지 표시
-int make_new_block();	//return값으로 block의 모양번호를 알려줌
-int strike_check(int shape, int angle, int x, int y);	//블럭이 화면 맨 아래에 부닥쳤는지 검사 부닥치면 1을리턴 아니면 0리턴
-int merge_block(int shape, int angle, int x, int y);	//블럭이 바닥에 닿았을때 진행중인 블럭과 쌓아진 블럭을 합침
-int block_start(int shape, int* angle, int* x, int* y);	//블럭이 처음 나올때 위치와 모양을 알려줌
-int move_block(int* shape, int* angle, int* x, int* y, int* next_shape);	//게임오버는 1을 리턴 바닥에 블럭이 닿으면 2를 리턴
+int make_new_block();   //return값으로 block의 모양번호를 알려줌
+int strike_check(int shape, int angle, int x, int y);   //블럭이 화면 맨 아래에 부닥쳤는지 검사 부닥치면 1을리턴 아니면 0리턴
+int merge_block(int shape, int angle, int x, int y);   //블럭이 바닥에 닿았을때 진행중인 블럭과 쌓아진 블럭을 합침
+int block_start(int shape, int* angle, int* x, int* y);   //블럭이 처음 나올때 위치와 모양을 알려줌
+int move_block(int* shape, int* angle, int* x, int* y, int* next_shape);   //게임오버는 1을 리턴 바닥에 블럭이 닿으면 2를 리턴
 int rotate_block(int shape, int* angle, int* x, int* y);
 int show_gameover();
 int show_gamestat(); // 스테이지, 레벨, 점수 출력
@@ -122,85 +119,87 @@ int main(int argc, char* argv[])
 		show_gamestat(); // 스테이지, 레벨, 점수 출력
 		for (i = 1; 1; i++)
 		{
-			if (_kbhit())
+			if (_kbhit())      //키 입력이 일어나면
 			{
-				keytemp = _getche();
-				if (keytemp == EXT_KEY)
+				keytemp = _getche();      //무슨키인지 변수에 넣음
+				if (keytemp == EXT_KEY)      //키 입력 범위 확인
 				{
 					keytemp = _getche();
 					switch (keytemp)
 					{
-					case KEY_UP:		//회전하기
+					case KEY_UP:      //회전하기
 
-						if (strike_check(block_shape, (block_angle + 1) % 4, block_x, block_y) == 0)
+						if (strike_check(block_shape, (block_angle + 1) % 4, block_x, block_y) == 0) //충돌이 없을 경우에만 가능하게
 						{
-							erase_cur_block(block_shape, block_angle, block_x, block_y);
-							block_angle = (block_angle + 1) % 4;
-							show_cur_block(block_shape, block_angle, block_x, block_y);
+							erase_cur_block(block_shape, block_angle, block_x, block_y);   //현재 블럭을 지우고
+							block_angle = (block_angle + 1) % 4;                     //블럭의 앵글을 변경
+							show_cur_block(block_shape, block_angle, block_x, block_y);      //변경된 블럭 출력
 						}
 						break;
-					case KEY_LEFT:		//왼쪽으로 이동
-						if (block_x > 1)
+					case KEY_LEFT:      //왼쪽으로 이동
+						if (block_x > 1)  //벽이랑 충돌 안할 경우만
 						{
-							erase_cur_block(block_shape, block_angle, block_x, block_y);
-							block_x--;
-							if (strike_check(block_shape, block_angle, block_x, block_y) == 1)
+							erase_cur_block(block_shape, block_angle, block_x, block_y);   //현재 블럭지우고
+							block_x--;                                          // x좌표 이동
+							if (strike_check(block_shape, block_angle, block_x, block_y) == 1)  //블럭이랑 충돌할 경우 원상태로 x++
 								block_x++;
 
-							show_cur_block(block_shape, block_angle, block_x, block_y);
+							show_cur_block(block_shape, block_angle, block_x, block_y);      //수정된 블럭 보여줌
 						}
 						break;
-					case KEY_RIGHT:		//오른쪽으로 이동
+					case KEY_RIGHT:      //오른쪽으로 이동
 
-						if (block_x < 14)
+						if (block_x < 14)                                          //오른쪽 벽이랑 충돌 안할 경우만
 						{
-							erase_cur_block(block_shape, block_angle, block_x, block_y);
-							block_x++;
-							if (strike_check(block_shape, block_angle, block_x, block_y) == 1)
-								block_x--;
-							show_cur_block(block_shape, block_angle, block_x, block_y);
+							erase_cur_block(block_shape, block_angle, block_x, block_y);      // 현재 블럭지움
+							block_x++;                                             // x좌표 이동
+							if (strike_check(block_shape, block_angle, block_x, block_y) == 1)   //블럭이랑 충돌시
+								block_x--;                                          //원상태
+							show_cur_block(block_shape, block_angle, block_x, block_y);         //수정된 블럭 보여줌
 						}
 						break;
-					case KEY_DOWN:		//아래로 이동
-						is_gameover = move_block(&block_shape, &block_angle, &block_x, &block_y, &next_block_shape);
-						show_cur_block(block_shape, block_angle, block_x, block_y);
+					case KEY_DOWN:      //아래로 이동
+						is_gameover = move_block(&block_shape, &block_angle, &block_x, &block_y, &next_block_shape);   //game_over판단 1==over, 0==not over
+						show_cur_block(block_shape, block_angle, block_x, block_y);               //수정된 블럭보여줌
 						break;
 					}
 				}
-				if (keytemp == 32)	//스페이스바를 눌렀을때
+				if (keytemp == 32)   //스페이스바를 눌렀을때
 				{
 					while (is_gameover == 0)
 					{
-						is_gameover = move_block(&block_shape, &block_angle, &block_x, &block_y, &next_block_shape);
+						is_gameover = move_block(&block_shape, &block_angle, &block_x, &block_y, &next_block_shape);   //game_over 판단
 					}
 					show_cur_block(block_shape, block_angle, block_x, block_y);
 				}
 			}
-			if (i % stage_data[level].speed == 0)
+			if (i % stage_data[level].speed == 0)         //satge_data에 저장된level의 speed에 따라 블럭의 내려가는 속도를 조절. speed값이 클수록 느리게 떨어짐
 			{
 				is_gameover = move_block(&block_shape, &block_angle, &block_x, &block_y, &next_block_shape);
 
 				show_cur_block(block_shape, block_angle, block_x, block_y);
 			}
 
-			if (stage_data[level].clear_line == lines)	//클리어 스테이지
+			if (stage_data[level].clear_line <= lines)   //클리어 스테이지, 각 레벨별 라인과 부순 라인이 같으면 클리어라고 판단
 			{
 				level++;
 				lines = 0;
+				show_total_block();                  //스테이지에 대한 출력변화를 바로 보여주기위해 추가
+				show_gamestat();
 			}
-			if (is_gameover == 1)
+			if (is_gameover == 1)         //게임 오버
 			{
 				is_gameover = 0;
-				show_gameover();
+				show_gameover();      //게임오버 메세지 출력
 				SetColor(GRAY);
-				break;
+				break;               //인게임 루프탈출
 			}
 
 			gotoxy(77, 23);
-			Sleep(15);
+			Sleep(15);         //루프의 속도를 조절하기 위해서
 			gotoxy(77, 23);
 		}
-		init();
+		init();               //게임오버에서 탈출시 다시 초기화
 	}
 	return 0;
 }
@@ -401,10 +400,10 @@ int make_new_block()
 	int shape;
 	int i;
 	i = rand() % 100;
-	if (i <= stage_data[level].stick_rate)		//막대기 나올확률 계산
-		return 0;							//막대기 모양으로 리턴
+	if (i <= stage_data[level].stick_rate)      //막대기 나올확률 계산
+		return 0;                     //막대기 모양으로 리턴
 
-	shape = (rand() % 6) + 1;		//shape에는 1~6의 값이 들어감
+	shape = (rand() % 6) + 1;      //shape에는 1~6의 값이 들어감
 	show_next_block(shape);
 	return shape;
 }
@@ -412,24 +411,15 @@ int make_new_block()
 
 int strike_check(int shape, int angle, int x, int y)
 {
-	int i, j; // 이중 for문에 사용
-	// 블록의 4x4 공간의 각 칸이 이미 맵에 채워져 있는 칸인지에 대한 
-	// 정보 저장 (채워져있으면 1, 아니면 0)
+	int i, j;
 	int block_dat;
 
-	// 블록의 4x4 공간의 16개 칸 하나하나에 대해 
-	// 검사를 하기 위해 이중 for문 사용
 	for (i = 0; i < 4; i++)
 	{
 		for (j = 0; j < 4; j++)
 		{
 			int moved_x = x + j;
 			int moved_y = y + i;
-			// 해당 칸이 맵 테투리인 경우,
-			// 맵 테투리도 채워져있는 칸이므로 1 대입
-			// 맵 테두리가 아닌 맵 내부범위라면,
-			// 해당 칸이 이미 블록이 쌓인 칸이라면 1, 아니면 0을 대입
-			// 맵 밖의 위치이면, 0을 대입
 			if ((moved_x == 0) || (moved_x == 13))
 				block_dat = 1;
 			else if (moved_y >= 0 && moved_y < 21 && moved_x >= 0 && moved_x < 14)
@@ -437,8 +427,13 @@ int strike_check(int shape, int angle, int x, int y)
 			else
 				block_dat = 0;
 
+			/*if ((moved_x == 0) || (moved_x == 13))
+			   block_dat = 1;
+			else
+			   block_dat = total_block[y + i][x + j];*/
 
-			if ((block_dat == 1) && (block[shape][angle][i][j] == 1))																							//좌측벽의 좌표를 빼기위함
+
+			if ((block_dat == 1) && (block[shape][angle][i][j] == 1))                                                                     //좌측벽의 좌표를 빼기위함
 			{
 				return 1;
 			}
@@ -476,15 +471,15 @@ int show_gameover()
 {
 	SetColor(RED);
 	gotoxy(15, 8);
-	printf("┏━━━━━━━━━━━━━┓");
+	printf("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
 	gotoxy(15, 9);
-	printf("┃**************************┃");
+	printf("┃ **************************┃");
 	gotoxy(15, 10);
-	printf("┃*        GAME OVER       *┃");
+	printf("┃ *        GAME OVER       *┃");
 	gotoxy(15, 11);
-	printf("┃**************************┃");
+	printf("┃ **************************┃");
 	gotoxy(15, 12);
-	printf("┗━━━━━━━━━━━━━┛");
+	printf("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
 	fflush(stdin);
 	Sleep(1000);
 
@@ -498,12 +493,11 @@ int move_block(int* shape, int* angle, int* x, int* y, int* next_shape)
 {
 	erase_cur_block(*shape, *angle, *x, *y);
 
-	(*y)++;	//블럭을 한칸 아래로 내림
+	(*y)++;   //블럭을 한칸 아래로 내림
 	if (strike_check(*shape, *angle, *x, *y) == 1)
 	{
-		if (*y <= 0)	//게임오버
+		if (*y <= 0)   //게임오버
 		{
-
 			return 1;
 		}
 		(*y)--;
@@ -511,7 +505,7 @@ int move_block(int* shape, int* angle, int* x, int* y, int* next_shape)
 		*shape = *next_shape;
 		*next_shape = make_new_block();
 
-		block_start(*shape, angle, x, y);	//angle,x,y는 포인터임
+		block_start(*shape, angle, x, y);   //angle,x,y는 포인터임
 		show_next_block(*next_shape);
 		return 2;
 	}
@@ -533,7 +527,7 @@ int check_full_line()
 			if (total_block[i][j] == 0)
 				break;
 		}
-		if (j == 13)	//한줄이 다 채워졌음
+		if (j == 13)   //한줄이 다 채워졌음
 		{
 			lines++;
 			show_total_block();
@@ -623,7 +617,7 @@ int input_data()
 	int i = 0;
 	SetColor(GRAY);
 	gotoxy(10, 7);
-	printf("┏━━━━<GAME KEY>━━━━━┓");
+	printf("┏━━━━<GAME KEY>━━━━━━━━━━━━━━┓");
 	Sleep(10);
 	gotoxy(10, 8);
 	printf("┃ UP   : Rotate Block        ┃");
@@ -641,7 +635,7 @@ int input_data()
 	printf("┃ RIGHT: Move Right          ┃");
 	Sleep(10);
 	gotoxy(10, 13);
-	printf("┗━━━━━━━━━━━━━━┛");
+	printf("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
 
 
 	while (i < 1 || i>8)
@@ -661,7 +655,7 @@ int show_logo()
 {
 	int i, j;
 	gotoxy(13, 3);
-	printf("┏━━━━━━━━━━━━━━━━━━━━━━━┓");
+	printf("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
 	Sleep(100);
 	gotoxy(13, 4);
 	printf("┃◆◆◆  ◆◆◆  ◆◆◆   ◆◆     ◆   ◆  ◆ ┃");
@@ -679,7 +673,7 @@ int show_logo()
 	printf("┃  ◆    ◆◆◆    ◆     ◆  ◆   ◆   ◆  ◆ ┃");
 	Sleep(100);
 	gotoxy(13, 9);
-	printf("┗━━━━━━━━━━━━━━━━━━━━━━━┛");
+	printf("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
 
 	gotoxy(28, 20);
 	printf("Please Press Any Key~!");
@@ -689,13 +683,10 @@ int show_logo()
 		if (i % 40 == 0)
 		{
 
-
 			for (j = 0; j < 5; j++)
 			{
-				gotoxy(18, 14 + j);
+				gotoxy(17, 14 + j);
 				printf("                                                          ");
-
-
 			}
 			show_cur_block(rand() % 7, rand() % 4, 6, 14);
 			show_cur_block(rand() % 7, rand() % 4, 12, 14);
