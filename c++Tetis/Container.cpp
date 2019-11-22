@@ -1,12 +1,6 @@
 #include "Container.h"
 #include <Windows.h>
 
-//Container::Container()
-//	:Container(5,1)
-//{
-//
-//}
-
 Container::Container(const int& ab_x, const int& ab_y)
 :m_ab_x(ab_x),m_ab_y(ab_y)
 {

@@ -42,7 +42,7 @@ void LogoContainer::show_random_block(const int& x, const int& y)
 			// 화면 밖을 나갈때는 출력을 생략한다.
 			if ((j + y) < 0)
 				continue;
-			if (m_tetromino.get_cur_tetromino()[j][i] == 1)
+			if (m_tetromino.get_tetromino()[j][i] == 1)
 			{
 				gotoxy((i + x) * 2 + m_ab_x, j + y + m_ab_y);
 				printf("■");
