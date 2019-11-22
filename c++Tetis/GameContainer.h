@@ -24,6 +24,7 @@ public:
 	int get_tetromino_y() const;
 	int get_level() const;
 	int get_lines() const;
+	int get_tetromino_shape() const;
 	void set_level(const int& level);
 	void set_lines(const int& lines);
 	void set_tetromino_x(const int& x);

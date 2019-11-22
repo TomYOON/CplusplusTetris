@@ -64,6 +64,10 @@ int main(void) {
 						{
 							gc.erase_cur_tetromino(); //현재 블럭을 지우고
 							gc.rotate_tetromino();//블럭의 앵글을 변경
+							//블럭이랑 충돌할 경우 원상태로 x--
+							if (gc.strike_check() == 1) {
+								while (gc.strike_check()) gc.set_tetromino_x(gc.get_tetromino_x() - 1);
+							}  
 							gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //변경된 블럭 출력
 						}
 						break;

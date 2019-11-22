@@ -40,6 +40,11 @@ int GameContainer::get_lines() const
 	return m_lines;
 }
 
+int GameContainer::get_tetromino_shape() const
+{
+	return m_tetromino.get_shape();
+}
+
 void GameContainer::set_level(const int& level)
 {
 	m_level = level;
@@ -271,7 +276,7 @@ bool GameContainer::strike_check()
 			int moved_y = tetromino_y + i;
 			if ((moved_x == 0) || (moved_x == 13))
 				block_dat = 1;
-			else if (moved_y >= 0 && moved_y < 21 && moved_x >= 0 && moved_x < 14)
+			else if (moved_y >= 0 && moved_y < 21 && moved_x >= 1 && moved_x < 14)
 				block_dat = m_total_block[moved_y][moved_x];
 			else
 				block_dat = 0;
