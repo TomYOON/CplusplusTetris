@@ -44,10 +44,10 @@ void SelectLevelContainer::show_select_level()
 	printf("曲收收收收收收收收收收收收收收收收收收收收收收收收收收收收旭");
 
 
-	while (i < 1 || i > 8)
+	while (i < 1 || i > 10)
 	{
 		gotoxy(10, 3);
-		printf("Select Start level[1-8]:       \b\b\b\b\b\b\b");
+		printf("Select Start level[1-10]:       \b\b\b\b\b\b\b");
 		scanf_s("%d", &i);
 	}
 

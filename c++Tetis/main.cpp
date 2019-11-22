@@ -13,22 +13,6 @@ using namespace std;
 #define KEY_UP         0x48
 #define KEY_DOWN      0x50
 
-void setColor(const int& color)
-{
-	static HANDLE std_output_handle;
-	std_output_handle = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(std_output_handle, color);
-}
-
-void gotoxy(const int& x, const int& y)
-{
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD pos;
-	pos.Y = y;
-	pos.X = x;
-	SetConsoleCursorPosition(hConsole, pos);
-}
-
 int main(void) {
 	LogoContainer lc;
 	SelectLevelContainer slc;
@@ -43,6 +27,7 @@ int main(void) {
 	while (1)
 	{
 		slc.show_select_level(); // 난이도 입력
+		gc.set_level(slc.get_level());
 		gc.show_total_block();  // 인터페이스 형성
 		gc.make_cur_tetromino();// 블록 모양 생성
 		gc.show_next_tetromino(); // 다음 블록 모양 출력
@@ -79,23 +64,23 @@ int main(void) {
 							if (gc.strike_check() == 1)  //블럭이랑 충돌할 경우 원상태로 x++
 								gc.set_tetromino_x(gc.get_tetromino_x() + 1);
 
-							gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());      //수정된 블럭 보여줌
+							gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //수정된 블럭 보여줌
 						}
 						break;
 					case KEY_RIGHT:      //오른쪽으로 이동
 
-						if (gc.get_tetromino_x() < 14)                                          //오른쪽 벽이랑 충돌 안할 경우만
+						if (gc.get_tetromino_x() < 14)   //오른쪽 벽이랑 충돌 안할 경우만
 						{
 							gc.erase_cur_tetromino();      // 현재 블럭지움
-							gc.set_tetromino_x(gc.get_tetromino_x() + 1);                  // x좌표 이동
+							gc.set_tetromino_x(gc.get_tetromino_x() + 1);   // x좌표 이동
 							if (gc.strike_check() == 1)   //블럭이랑 충돌시
 								gc.set_tetromino_x(gc.get_tetromino_x() - 1);        //원상태
-							gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());         //수정된 블럭 보여줌
+							gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //수정된 블럭 보여줌
 						}
 						break;
 					case KEY_DOWN:      //아래로 이동
 						is_gameover = gc.move_tetromino(); //game_over판단 1==over, 0==not over
-						gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());               //수정된 블럭보여줌
+						gc.show_cur_tetromino(gc.get_tetromino_x(), gc.get_tetromino_y());  //수정된 블럭보여줌
 						break;
 					}
 				}
@@ -127,15 +112,15 @@ int main(void) {
 			{
 				is_gameover = 0;
 				gc.show_gameover();  //게임오버 메세지 출력
-				setColor(GRAY);
+				gc.setColor(GRAY);
 				break;               //인게임 루프탈출
 			}
 
-			gotoxy(77, 23);
+			gc.gotoxy(77, 23);
 			Sleep(15);         //루프의 속도를 조절하기 위해서
-			gotoxy(77, 23);
+			gc.gotoxy(77, 23);
 		}
-		gc.init();               //게임오버에서 탈출시 다시 초기화
+		gc.init(); //게임오버에서 탈출시 다시 초기화
 	}
 	return 0;
 }
