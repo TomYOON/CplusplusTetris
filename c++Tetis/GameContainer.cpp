@@ -220,7 +220,52 @@ void GameContainer::show_next_tetromino()
 		}
 	}
 	// 박스 안에 다음 블록의 모양을 출력
-	show_cur_tetromino(15,1);
+	/*show_cur_tetromino(15,1);*/
+
+	// 해당 블록에 맞는 색깔을 출력
+	switch (m_tetromino.get_shape())
+	{
+	case 0: //막대모양 1
+		setColor(RED);
+		break;
+	case 1: //네모모양 ㅁ
+		setColor(BLUE);
+		break;
+	case 2: //'ㅓ' 모양
+		setColor(SKY_BLUE);
+		break;
+	case 3: //'ㄱ'모양
+		setColor(WHITE);
+		break;
+	case 4: //'ㄴ' 모양
+		setColor(YELLOW);
+		break;
+	case 5: //'Z' 모양
+		setColor(VOILET);
+		break;
+	case 6: //'S' 모양
+		setColor(GREEN);
+		break;
+	}
+	// 좌표 x, y 에 대하여 4X4 칸 내에 블록을 출력
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			// 화면 밖을 나갈때는 출력을 생략한다.
+			if ((j + 1) < 0)
+				continue;
+			if (m_tetromino.get_next_tetromino()[j][i] == 1)
+			{
+				gotoxy((i + 15) * 2 + m_ab_x, j + 1 + m_ab_y);
+				printf("■");
+
+			}
+		}
+	}
+	// 다시 검정으로 바꾼후 커서 이동
+	setColor(BLACK);
+	gotoxy(77, 23);
 }
 
 void GameContainer::make_cur_tetromino()
