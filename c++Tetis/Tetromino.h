@@ -34,7 +34,9 @@ public:
 	void set_shape(const int& shape);
 	void set_angle(const int& angle);
 	int get_shape() const;
+	int get_angle() const;
 	void set_next_shape(const int& next_shape);
+	int get_next_shape() const;
 	//char* get_cur_tetromino() const;
 	const char(&get_cur_tetromino())[4][4];
 	const char(&get_next_tetromino())[4][4];

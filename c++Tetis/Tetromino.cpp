@@ -24,9 +24,19 @@ int Tetromino::get_shape() const
 	return m_shape;
 }
 
+int Tetromino::get_angle() const
+{
+	return m_angle;
+}
+
 void Tetromino::set_next_shape(const int& next_shape)
 {
 	m_next_shape = next_shape;
+}
+
+int Tetromino::get_next_shape() const
+{
+	return m_next_shape;
 }
 
 //char* Tetromino::get_cur_tetromino() const
