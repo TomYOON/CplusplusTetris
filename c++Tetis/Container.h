@@ -9,6 +9,7 @@ public:
 	Container(const int& ab_x = 5, const int& ab_y = 1);
 	void setColor(const int& color);
 	void gotoxy(const int& x, const int& y);
+	void get_tetromino_color(const int& shape);
 	
 };
 
