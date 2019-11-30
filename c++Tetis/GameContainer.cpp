@@ -117,7 +117,7 @@ void GameContainer::show_tetromino(Tetromino& tetromino, const int& x, const int
 			if (tetromino.get_tetromino()[j][i] == 1)
 			{
 				gotoxy((i + x) * 2 + m_ab_x, j + y + m_ab_y);
-				cout << "■";
+				printf("■");
 
 			}
 		}
@@ -137,7 +137,7 @@ void GameContainer::erase_cur_tetromino()
 			if (m_cur_tetromino.get_tetromino()[j][i] == 1)
 			{
 				gotoxy((i + tetromino_x) * 2 + m_ab_x, j + tetromino_y + m_ab_y);
-				cout << "  ";
+				printf("  ");
 				//break;
 
 			}
@@ -166,10 +166,10 @@ void GameContainer::show_total_block()
 			// 블록이 앉은 자리는 출력을 한다.
 			if (m_total_block[i][j] == 1)
 			{
-				cout << "■";
+				printf("■");
 			}
 			else {
-				cout << "  ";
+				printf("  ");
 			}
 
 		}
@@ -193,10 +193,10 @@ void GameContainer::show_next_tetromino()
 		{
 			if (i == 1 || i == 6 || j == 0 || j == 5)
 			{
-				cout << "■";
+				printf("■");
 			}
 			else {
-				cout << "  ";
+				printf("  ");
 			}
 
 		}
@@ -294,7 +294,7 @@ int GameContainer::move_tetromino()
 			return 1;
 		}
 		(tetromino_y)--;
-		cout << m_cur_tetromino.get_shape() << m_cur_tetromino.get_angle();
+		printf("%d, %d", m_cur_tetromino.get_shape(), m_cur_tetromino.get_angle());
 		merge_tetromino();
 		m_cur_tetromino.set_shape(m_next_tetromino.get_shape());   //next -> cur
 		make_next_tetromino();
@@ -316,15 +316,15 @@ void GameContainer::show_gameover()
 {
 	setColor(RED);
 	gotoxy(15, 8);
-	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┓";
+	printf("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
 	gotoxy(15, 9);
-	cout << "┃ **************************┃";
+	printf("┃ **************************┃");
 	gotoxy(15, 10);
-	cout << "┃ *        GAME OVER       *┃";
+	printf("┃ *        GAME OVER       *┃");
 	gotoxy(15, 11);
-	cout << "┃ **************************┃";
+	printf("┃ **************************┃");
 	gotoxy(15, 12);
-	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛";
+	printf("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
 	fflush(stdin);
 	Sleep(1000);
 
@@ -339,22 +339,22 @@ void GameContainer::show_gamestat()
 	if (printed_text == 0)
 	{
 		gotoxy(35, 7);
-		cout << "STAGE";
+		printf("STAGE");
 
 		gotoxy(35, 9);
-		cout << "SCORE";
+		printf("SCORE");
 
 		gotoxy(35, 12);
-		cout << "LINES";
+		printf("LINES");
 
 
 	}
 	gotoxy(41, 7);
-	cout << m_level + 1;
+	printf("%d", m_level + 1);
 	gotoxy(35, 10);
-	cout << m_score;
+	printf("%10d", m_score);
 	gotoxy(35, 13);
-	cout << stage_data[m_level].get_clear_line() - m_lines;
+	printf("%10d", stage_data[m_level].get_clear_line() - m_lines);
 }
 
 void GameContainer::check_full_line()
@@ -375,13 +375,13 @@ void GameContainer::check_full_line()
 			gotoxy(1 * 2 + m_ab_x, i + m_ab_y);
 			for (j = 1; j < 13; j++)
 			{
-				cout << "□";
+				printf("□");
 				Sleep(10);
 			}
 			gotoxy(1 * 2 + m_ab_x, i + m_ab_y);
 			for (j = 1; j < 13; j++)
 			{
-				cout << "  ";
+				printf("  ");
 				Sleep(10);
 			}
 

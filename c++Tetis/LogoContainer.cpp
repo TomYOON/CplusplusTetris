@@ -22,7 +22,7 @@ void LogoContainer::show_random_block(const int& x, const int& y)
 			if (m_tetromino.get_tetromino()[j][i] == 1)
 			{
 				gotoxy((i + x) * 2 + m_ab_x, j + y + m_ab_y);
-				cout << "﹥";
+				printf("﹥");
 
 			}
 		}
@@ -50,28 +50,28 @@ void LogoContainer::show_logo()
 {
 	int i, j;
 	gotoxy(13, 3);
-	cout << "旨收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收旬";
+	printf("旨收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收旬");
 	Sleep(100);
 	gotoxy(13, 4);
-	cout << "早﹣﹣﹣  ﹣﹣﹣  ﹣﹣﹣   ﹣﹣     ﹣   ﹣  ﹣ 早";
+	printf("早﹣﹣﹣  ﹣﹣﹣  ﹣﹣﹣   ﹣﹣     ﹣   ﹣  ﹣ 早");
 	Sleep(100);
 	gotoxy(13, 5);
-	cout << "早  ﹣    ﹣        ﹣     ﹣ ﹣    ﹣    ﹣﹣  早";
+	printf("早  ﹣    ﹣        ﹣     ﹣ ﹣    ﹣    ﹣﹣  早");
 	Sleep(100);
 	gotoxy(13, 6);
-	cout << "早  ﹣    ﹣﹣﹣    ﹣     ﹣﹣     ﹣     ﹣   早";
+	printf("早  ﹣    ﹣﹣﹣    ﹣     ﹣﹣     ﹣     ﹣   早");
 	Sleep(100);
 	gotoxy(13, 7);
-	cout << "早  ﹣    ﹣        ﹣     ﹣ ﹣    ﹣    ﹣﹣  早";
+	printf("早  ﹣    ﹣        ﹣     ﹣ ﹣    ﹣    ﹣﹣  早");
 	Sleep(100);
 	gotoxy(13, 8);
-	cout << "早  ﹣    ﹣﹣﹣    ﹣     ﹣  ﹣   ﹣   ﹣  ﹣ 早";
+	printf("早  ﹣    ﹣﹣﹣    ﹣     ﹣  ﹣   ﹣   ﹣  ﹣ 早");
 	Sleep(100);
 	gotoxy(13, 9);
-	cout << "曲收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收旭";
+	printf("曲收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收旭");
 
 	gotoxy(28, 20);
-	cout << "Please Press Any Key~!";
+	printf("Please Press Any Key~!");
 
 	for (i = 0; i >= 0; i++)
 	{
@@ -82,7 +82,7 @@ void LogoContainer::show_logo()
 			for (j = 0; j < 5; j++)
 			{
 				gotoxy(0, 14 + j);
-				cout << "                                                                    ";
+				printf("                                                                    ");
 
 
 			}
