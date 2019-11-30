@@ -3,7 +3,6 @@
 
 Container::Container(const int& ab_x, const int& ab_y)
 :m_ab_x(ab_x),m_ab_y(ab_y)
-/*기본 생성자*/
 {
 }
 

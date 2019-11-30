@@ -90,7 +90,7 @@ void GameContainer::init()
 	for (j = 0; j < 14; j++)
 		m_total_block[20][j] = 1;
 
-	
+	//전역변수 초기화
 	m_level = 0;
 	m_lines = 0;
 	m_ab_x = 5;
