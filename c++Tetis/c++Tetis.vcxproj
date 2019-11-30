@@ -26,6 +26,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="SelectLevelContainer.cpp" />
+    <ClCompile Include="SelectModeContainer.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="test_main.cpp" />
     <ClCompile Include="tetrisCreatedByC.c">
@@ -40,6 +41,7 @@
     <ClInclude Include="GameContainer.h" />
     <ClInclude Include="LogoContainer.h" />
     <ClInclude Include="SelectLevelContainer.h" />
+    <ClInclude Include="SelectModeContainer.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="TetrisPlayer.h" />
     <ClInclude Include="Tetromino.h" />
