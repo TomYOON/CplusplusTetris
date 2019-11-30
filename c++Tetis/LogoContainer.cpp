@@ -10,7 +10,30 @@ void LogoContainer::show_random_block(const int& x, const int& y)
 	m_tetromino.set_angle(rand() % 4);
 
 	// 해당 블록에 맞는 색깔을 출력
-	get_tetromino_color(m_tetromino.get_shape());
+	switch (m_tetromino.get_shape())
+	{
+	case 0: //막대모양 1
+		setColor(RED);
+		break;
+	case 1: //네모모양 ㅁ
+		setColor(BLUE);
+		break;
+	case 2: //'ㅓ' 모양
+		setColor(SKY_BLUE);
+		break;
+	case 3: //'ㄱ'모양
+		setColor(WHITE);
+		break;
+	case 4: //'ㄴ' 모양
+		setColor(YELLOW);
+		break;
+	case 5: //'Z' 모양
+		setColor(VOILET);
+		break;
+	case 6: //'S' 모양
+		setColor(GREEN);
+		break;
+	}
 	// 좌표 x, y 에 대하여 4X4 칸 내에 블록을 출력
 	for (int i = 0; i < 4; i++)
 	{

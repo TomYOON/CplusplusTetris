@@ -22,31 +22,3 @@ void Container::gotoxy(const int& x, const int& y)
 	pos.X = x;
 	SetConsoleCursorPosition(hConsole, pos);
 }
-
-void Container::get_tetromino_color(const int& shape)
-{
-	switch (shape)
-	{
-	case 0: //막대모양 1
-		setColor(RED);
-		break;
-	case 1: //네모모양 ㅁ
-		setColor(BLUE);
-		break;
-	case 2: //'ㅓ' 모양
-		setColor(SKY_BLUE);
-		break;
-	case 3: //'ㄱ'모양
-		setColor(WHITE);
-		break;
-	case 4: //'ㄴ' 모양
-		setColor(YELLOW);
-		break;
-	case 5: //'Z' 모양
-		setColor(VOILET);
-		break;
-	case 6: //'S' 모양
-		setColor(GREEN);
-		break;
-	}
-}
