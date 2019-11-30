@@ -22,9 +22,12 @@
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="GameContainer.cpp" />
     <ClCompile Include="LogoContainer.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="SelectLevelContainer.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="test_main.cpp" />
     <ClCompile Include="tetrisCreatedByC.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>

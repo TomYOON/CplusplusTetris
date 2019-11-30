@@ -72,6 +72,7 @@ LogoContainer::~LogoContainer()
 void LogoContainer::show_logo()
 {
 	int i, j;
+	setColor(GRAY);
 	gotoxy(13, 3);
 	cout << "旨收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收旬";
 	Sleep(100);
