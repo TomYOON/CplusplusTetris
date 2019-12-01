@@ -31,7 +31,7 @@ public:
 	void set_lines(const int& lines);
 	void set_tetromino_x(const int& x);
 	void set_tetromino_y(const int& y);
-	void init();
+	virtual void init();
 	virtual void show_tetromino(const int& x, const int& y);
 	virtual void show_tetromino(Tetromino& tetromino, const int& x, const int& y);
 	virtual void show_total_block();

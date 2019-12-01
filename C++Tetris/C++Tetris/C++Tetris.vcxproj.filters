@@ -1,93 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="Container.cpp" />
+    <ClCompile Include="GameContainer.cpp" />
+    <ClCompile Include="LogoContainer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="OddContainer.cpp" />
+    <ClCompile Include="OddTetromino.cpp" />
+    <ClCompile Include="SelectLevelContainer.cpp" />
+    <ClCompile Include="SelectModeContainer.cpp" />
+    <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="StoryContainer.cpp" />
+    <ClCompile Include="test_main.cpp" />
+    <ClCompile Include="tetrisCreatedByC.c" />
+    <ClCompile Include="TetrisPlayer.cpp" />
+    <ClCompile Include="Tetromino.cpp" />
+    <ClCompile Include="소스.cpp" />
+    <ClCompile Include="RandomFieldContainer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Container.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="GameContainer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="LogoContainer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectLevelContainer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectModeContainer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="test_main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="tetrisCreatedByC.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="TetrisPlayer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Tetromino.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="소스.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="OddTetromino.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="OddContainer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Container.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GameContainer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="LogoContainer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="SelectLevelContainer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="SelectModeContainer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="TetrisPlayer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Tetromino.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="OddTetromino.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="OddContainer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
+    <ClInclude Include="Container.h" />
+    <ClInclude Include="GameContainer.h" />
+    <ClInclude Include="LogoContainer.h" />
+    <ClInclude Include="OddContainer.h" />
+    <ClInclude Include="OddTetromino.h" />
+    <ClInclude Include="SelectLevelContainer.h" />
+    <ClInclude Include="SelectModeContainer.h" />
+    <ClInclude Include="Stage.h" />
+    <ClInclude Include="StoryContainer.h" />
+    <ClInclude Include="TetrisPlayer.h" />
+    <ClInclude Include="Tetromino.h" />
+    <ClInclude Include="RandomFieldContainer.h" />
   </ItemGroup>
 </Project>

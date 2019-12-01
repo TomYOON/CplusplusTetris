@@ -7,6 +7,7 @@
 #include <iostream>
 #include <Windows.h>
 #include "OddContainer.h"
+#include "RandomFieldContainer.h"
 using namespace std;
 
 int main(void) {
@@ -14,7 +15,8 @@ int main(void) {
 	SelectLevelContainer slc;
 	GameContainer g1;
 	OddContainer O1;
-	OddContainer gcArray[1] = {O1,};
+	RandomFieldContainer r1;
+	RandomFieldContainer gcArray[1] = {r1,};
 	Stage stage;
 	TetrisPlayer tp(gcArray);
 	while (1)

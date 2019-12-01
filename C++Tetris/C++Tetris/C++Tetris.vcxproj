@@ -27,6 +27,7 @@
     </ClCompile>
     <ClCompile Include="OddContainer.cpp" />
     <ClCompile Include="OddTetromino.cpp" />
+    <ClCompile Include="RandomFieldContainer.cpp" />
     <ClCompile Include="SelectLevelContainer.cpp" />
     <ClCompile Include="SelectModeContainer.cpp" />
     <ClCompile Include="Stage.cpp" />
@@ -45,6 +46,7 @@
     <ClInclude Include="LogoContainer.h" />
     <ClInclude Include="OddContainer.h" />
     <ClInclude Include="OddTetromino.h" />
+    <ClInclude Include="RandomFieldContainer.h" />
     <ClInclude Include="SelectLevelContainer.h" />
     <ClInclude Include="SelectModeContainer.h" />
     <ClInclude Include="Stage.h" />
