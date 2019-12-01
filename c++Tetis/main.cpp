@@ -5,9 +5,6 @@
 #include <conio.h>
 #include <iostream>
 #include <Windows.h>
-#include "OddContainer.h"
-#include "OddTetromino.h"
-#include "TestContainer.h"
 using namespace std;
 
 const unsigned int EXT_KEY = 0xffffffe0;
@@ -19,7 +16,7 @@ const int  KEY_DOWN = 0x50;
 int main(void) {
 	LogoContainer lc;
 	SelectLevelContainer slc;
-	TestContainer gc;
+	GameContainer gc;
 	Stage stage;
 
 	int i;

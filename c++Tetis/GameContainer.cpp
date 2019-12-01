@@ -332,6 +332,30 @@ void GameContainer::show_gameover()
 	system("cls");
 }
 
+void GameContainer::show_gamestat()
+{
+	static int printed_text = 0;
+	setColor(GRAY);
+	if (printed_text == 0)
+	{
+		gotoxy(35, 7);
+		cout << "STAGE";
+
+		gotoxy(35, 9);
+		cout << "SCORE";
+
+		gotoxy(35, 12);
+		cout << "LINES";
+
+
+	}
+	gotoxy(41, 7);
+	cout << m_level + 1;
+	gotoxy(35, 10);
+	cout << m_score;
+	gotoxy(35, 13);
+	cout << stage_data[m_level].get_clear_line() - m_lines;
+}
 
 void GameContainer::check_full_line()
 {
@@ -369,7 +393,7 @@ void GameContainer::check_full_line()
 			for (j = 1; j < 13; j++)
 				m_total_block[0][j] = 0;
 			m_score += 100 + (m_level * 10) + (rand() % 10);
-			
+			show_gamestat();
 		}
 	}
 }
@@ -378,4 +402,3 @@ const Stage(&GameContainer::get_stage_data())[10]
 {
 	return stage_data;
 }
-
