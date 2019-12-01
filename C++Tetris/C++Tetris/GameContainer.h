@@ -5,13 +5,15 @@
 class GameContainer :
 	public Container
 {
+protected:
+	char m_total_block[21][14] = { 0, };
+	int tetromino_x;
+	int tetromino_y;
 private:
 	int m_level;
 	int m_score;
 	int m_lines;
-	char m_total_block[21][14] = {0,};
-	int tetromino_x;
-	int tetromino_y;
+
 	Tetromino m_cur_tetromino, m_next_tetromino;
 	Stage stage_data[10]
 		= { Stage(40,20,1), Stage(38,18,20), Stage(35,18,20), Stage(30,17,20), Stage(25,16,20),
