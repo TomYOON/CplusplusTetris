@@ -14,7 +14,7 @@ int main(void) {
 	SelectLevelContainer slc;
 	GameContainer g1;
 	OddContainer O1;
-	OddContainer gcArray[1] = {O1,};
+	GameContainer* gcArray[1] = {&O1,};
 	Stage stage;
 	TetrisPlayer tp(gcArray);
 	while (1)

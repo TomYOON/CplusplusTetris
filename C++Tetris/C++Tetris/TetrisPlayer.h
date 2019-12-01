@@ -11,7 +11,7 @@ private:
 	static constexpr int  m_KEY_UP = 0x48;
 	static constexpr int  m_KEY_DOWN = 0x50;
 	static constexpr int m_MODE_LEN = 1;
-	GameContainer* m_gcArray;
+	GameContainer** m_gcArray;
 	int m_frame;
 	char m_keytemp;
 	int m_is_gameOver;
@@ -34,7 +34,7 @@ private:
 
 public:
 	TetrisPlayer();
-	TetrisPlayer(GameContainer*gc);
+	TetrisPlayer(GameContainer**gc);
 	~TetrisPlayer();
 	void run();
 
