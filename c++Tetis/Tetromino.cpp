@@ -29,8 +29,6 @@ int Tetromino::get_angle() const
 	return m_angle;
 }
 
-
-
 const char(&Tetromino::get_tetromino())[4][4]
 {
 	return m_tetrominos[m_shape][m_angle];
