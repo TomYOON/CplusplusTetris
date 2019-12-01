@@ -30,6 +30,7 @@
     <ClCompile Include="SelectLevelContainer.cpp" />
     <ClCompile Include="SelectModeContainer.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="StoryContainer.cpp" />
     <ClCompile Include="test_main.cpp" />
     <ClCompile Include="tetrisCreatedByC.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -47,6 +48,7 @@
     <ClInclude Include="SelectLevelContainer.h" />
     <ClInclude Include="SelectModeContainer.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="StoryContainer.h" />
     <ClInclude Include="TetrisPlayer.h" />
     <ClInclude Include="Tetromino.h" />
   </ItemGroup>
