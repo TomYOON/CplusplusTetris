@@ -105,30 +105,7 @@ void GameContainer::show_tetromino(const int& x, const int& y)
 void GameContainer::show_tetromino(Tetromino& tetromino, const int& x, const int& y)
 {
 	// 해당 블록에 맞는 색깔을 출력
-	switch (tetromino.get_shape())
-	{
-	case 0: //막대모양 1
-		setColor(RED);
-		break;
-	case 1: //네모모양 ㅁ
-		setColor(BLUE);
-		break;
-	case 2: //'ㅓ' 모양
-		setColor(SKY_BLUE);
-		break;
-	case 3: //'ㄱ'모양
-		setColor(WHITE);
-		break;
-	case 4: //'ㄴ' 모양
-		setColor(YELLOW);
-		break;
-	case 5: //'Z' 모양
-		setColor(VOILET);
-		break;
-	case 6: //'S' 모양
-		setColor(GREEN);
-		break;
-	}
+	get_tetromino_color(tetromino.get_shape());
 	// 좌표 x, y 에 대하여 4X4 칸 내에 블록을 출력
 	for (int i = 0; i < 4; i++)
 	{
@@ -319,7 +296,7 @@ int GameContainer::move_tetromino()
 		(tetromino_y)--;
 		cout << m_cur_tetromino.get_shape() << m_cur_tetromino.get_angle();
 		merge_tetromino();
-		m_cur_tetromino.set_shape(m_next_tetromino.get_shape());
+		m_cur_tetromino.set_shape(m_next_tetromino.get_shape());   //next -> cur
 		make_next_tetromino();
 		//m_tetromino.set_next_shape(make_new_tetromino());
 
