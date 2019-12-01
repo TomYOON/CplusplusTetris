@@ -25,6 +25,7 @@
     <ClCompile Include="main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="OddTetromino.cpp" />
     <ClCompile Include="SelectLevelContainer.cpp" />
     <ClCompile Include="SelectModeContainer.cpp" />
     <ClCompile Include="Stage.cpp" />
@@ -40,6 +41,7 @@
     <ClInclude Include="Container.h" />
     <ClInclude Include="GameContainer.h" />
     <ClInclude Include="LogoContainer.h" />
+    <ClInclude Include="OddTetromino.h" />
     <ClInclude Include="SelectLevelContainer.h" />
     <ClInclude Include="SelectModeContainer.h" />
     <ClInclude Include="Stage.h" />
