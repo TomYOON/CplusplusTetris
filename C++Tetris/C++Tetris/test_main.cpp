@@ -6,13 +6,15 @@
 #include <conio.h>
 #include <iostream>
 #include <Windows.h>
+#include "OddContainer.h"
 using namespace std;
 
 int main(void) {
 	LogoContainer lc;
 	SelectLevelContainer slc;
 	GameContainer g1;
-	GameContainer gcArray[1] = {g1,};
+	OddContainer O1;
+	OddContainer gcArray[1] = {O1,};
 	Stage stage;
 	TetrisPlayer tp(gcArray);
 	while (1)

@@ -1,6 +1,7 @@
 #pragma once
 class Tetromino
 {
+
 private:
 	int m_shape;
 	int m_angle;
@@ -35,7 +36,9 @@ public:
 	int get_shape() const;
 	int get_angle() const;
 	//char* get_cur_tetromino() const;
-	const char(&get_tetromino())[4][4];
+	virtual const char(&get_tetromino())[4][4];
+
+
 	
 	/*char* get_next_tetromino() const;*/
 	

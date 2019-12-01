@@ -16,6 +16,7 @@ SelectModeContainer::~SelectModeContainer()
 SelectModeContainer::SelectModeContainer(const int& ab_x, const int& ab_y)
 	:Container(ab_x, ab_y)
 {
+
 }
 
 void SelectModeContainer::show_select_mode()
