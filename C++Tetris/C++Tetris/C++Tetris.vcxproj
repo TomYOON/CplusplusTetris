@@ -22,12 +22,17 @@
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="GameContainer.cpp" />
     <ClCompile Include="LogoContainer.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="SelectLevelContainer.cpp" />
-    <ClCompile Include="Stage.cpp" />
-    <ClCompile Include="tetrisCreatedByC.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    <ClCompile Include="main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="SelectLevelContainer.cpp" />
+    <ClCompile Include="SelectModeContainer.cpp" />
+    <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="test_main.cpp" />
+    <ClCompile Include="tetrisCreatedByC.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="TetrisPlayer.cpp" />
     <ClCompile Include="Tetromino.cpp" />
     <ClCompile Include="소스.cpp" />
   </ItemGroup>
@@ -36,14 +41,16 @@
     <ClInclude Include="GameContainer.h" />
     <ClInclude Include="LogoContainer.h" />
     <ClInclude Include="SelectLevelContainer.h" />
+    <ClInclude Include="SelectModeContainer.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="TetrisPlayer.h" />
     <ClInclude Include="Tetromino.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{87918216-9202-4E3F-A5E8-D89B113A7238}</ProjectGuid>
+    <ProjectGuid>{61D8BC49-1D18-4699-9761-9439465B9704}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>cTetis</RootNamespace>
+    <RootNamespace>CTetris</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

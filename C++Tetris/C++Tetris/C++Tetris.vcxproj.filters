@@ -15,16 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="소스.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="tetrisCreatedByC.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Tetromino.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Container.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContainer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="LogoContainer.cpp">
@@ -36,24 +30,33 @@
     <ClCompile Include="SelectLevelContainer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SelectModeContainer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="Stage.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="GameContainer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="TetrisPlayer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="test_main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="tetrisCreatedByC.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TetrisPlayer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Tetromino.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="소스.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tetromino.h">
+    <ClInclude Include="Container.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Container.h">
+    <ClInclude Include="GameContainer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="LogoContainer.h">
@@ -62,13 +65,16 @@
     <ClInclude Include="SelectLevelContainer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="SelectModeContainer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="Stage.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="GameContainer.h">
+    <ClInclude Include="TetrisPlayer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="TetrisPlayer.h">
+    <ClInclude Include="Tetromino.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
