@@ -15,7 +15,7 @@ private:
 	int m_lines;
 	Tetromino m_cur_tetromino, m_next_tetromino;
 	Stage stage_data[10]
-		= { Stage(40,20,20), Stage(38,18,20), Stage(35,18,20), Stage(30,17,20), Stage(25,16,20),
+		= { Stage(40,20,1), Stage(38,18,20), Stage(35,18,20), Stage(30,17,20), Stage(25,16,20),
 	Stage(20,14,20), Stage(15,14,20), Stage(10,13,20), Stage(6,12,20), Stage(4,11,99999) };
 public:
 	GameContainer();
