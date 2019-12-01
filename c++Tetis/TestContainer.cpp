@@ -1,71 +1,71 @@
-#include "GameContainer.h"
+#include "TestContainer.h"
 #include <conio.h>
 #include <iostream>
 #include <Windows.h>
 #include <time.h>
 using namespace std;
 
-GameContainer::GameContainer()
-	:GameContainer(5,1)
+TestContainer::TestContainer()
+	:TestContainer(5, 1)
 {
 }
 
-GameContainer::~GameContainer()
+TestContainer::~TestContainer()
 {
 }
 
-GameContainer::GameContainer(const int& ab_x, const int& ab_y)
-	:Container(ab_x, ab_y), m_level(0), m_lines(0), m_score(0), m_cur_tetromino(), m_next_tetromino(),
+TestContainer::TestContainer(const int& ab_x, const int& ab_y)
+	:GameContainer(ab_x, ab_y), m_level(0), m_lines(0), m_score(0), m_cur_tetromino(), m_next_tetromino(),
 	tetromino_x(5), tetromino_y(-3)
 {
 }
 
-int GameContainer::get_tetromino_x() const
+int TestContainer::get_tetromino_x() const
 {
 	return tetromino_x;
 }
 
-int GameContainer::get_tetromino_y() const
+int TestContainer::get_tetromino_y() const
 {
 	return tetromino_y;
 }
 
-int GameContainer::get_level() const
+int TestContainer::get_level() const
 {
 	return m_level;
 }
 
-int GameContainer::get_lines() const
+int TestContainer::get_lines() const
 {
 	return m_lines;
 }
 
-int GameContainer::get_tetromino_shape() const
+int TestContainer::get_tetromino_shape() const
 {
 	return m_cur_tetromino.get_shape();
 }
 
-void GameContainer::set_level(const int& level)
+void TestContainer::set_level(const int& level)
 {
 	m_level = level;
 }
 
-void GameContainer::set_lines(const int& lines)
+void TestContainer::set_lines(const int& lines)
 {
 	m_lines = lines;
 }
 
-void GameContainer::set_tetromino_x(const int& x)
+void TestContainer::set_tetromino_x(const int& x)
 {
 	tetromino_x = x;
 }
 
-void GameContainer::set_tetromino_y(const int& y)
+void TestContainer::set_tetromino_y(const int& y)
 {
 	tetromino_y = y;
 }
 
-void GameContainer::init()
+void TestContainer::init()
 {
 	int i, j;
 
@@ -90,19 +90,19 @@ void GameContainer::init()
 	for (j = 0; j < 14; j++)
 		m_total_block[20][j] = 1;
 
-	
+
 	m_level = 0;
 	m_lines = 0;
 	m_ab_x = 5;
 	m_ab_y = 1;
 }
 
-void GameContainer::show_tetromino(const int& x, const int& y)
+void TestContainer::show_tetromino(const int& x, const int& y)
 {
 	show_tetromino(m_cur_tetromino, x, y);
 }
 
-void GameContainer::show_tetromino(Tetromino& tetromino, const int& x, const int& y)
+void TestContainer::show_tetromino(Tetromino& tetromino, const int& x, const int& y)
 {
 	// 해당 블록에 맞는 색깔을 출력
 	get_tetromino_color(tetromino.get_shape());
@@ -127,7 +127,7 @@ void GameContainer::show_tetromino(Tetromino& tetromino, const int& x, const int
 	gotoxy(77, 23);
 }
 
-void GameContainer::erase_cur_tetromino()
+void TestContainer::erase_cur_tetromino()
 {
 	int i, j;
 	for (i = 0; i < 4; i++)
@@ -145,7 +145,7 @@ void GameContainer::erase_cur_tetromino()
 	}
 }
 
-void GameContainer::show_total_block()
+void TestContainer::show_total_block()
 {
 	int i, j;
 	setColor(DARK_GRAY);
@@ -179,7 +179,7 @@ void GameContainer::show_total_block()
 	gotoxy(77, 23);
 }
 
-void GameContainer::show_next_tetromino()
+void TestContainer::show_next_tetromino()
 {
 	int i, j;
 	// 레벨에 해당하는 색상으로 바꾼후
@@ -206,34 +206,33 @@ void GameContainer::show_next_tetromino()
 	show_tetromino(m_next_tetromino, 15, 1);
 }
 
-void GameContainer::make_cur_tetromino()
-{
-	int i;
-	i = rand() % 100;
-	if (i <= stage_data[m_level].get_stick_rate()) {      //막대기 나올확률 계산
-		m_cur_tetromino.set_shape(0);
-		return;                     //막대기 모양으로 리턴
-	}
-	m_cur_tetromino.set_shape((rand() % 6) + 1);
-}
-
-void GameContainer::make_next_tetromino()
+void TestContainer::make_cur_tetromino()
 {
 	int shape;
 	int i;
 	i = rand() % 100;
-	if (i <= stage_data[m_level].get_stick_rate()) {      //막대기 나올확률 계산
-		m_next_tetromino.set_shape(0);
-		return;                     //막대기 모양으로 리턴
+	if (i <= oddblock_per) {     //이상한 블럭 나올 확률 계산
+		shape = (rand() % 5);
 	}
-	m_next_tetromino.set_shape((rand() % 6) + 1);
-	m_next_tetromino.set_angle(0);
-	show_next_tetromino();
-
-	shape = (rand() % 6) + 1;      //shape에는 1~6의 값이 들어감
+	else shape = (rand() % 5 + 5);
+	m_cur_tetromino.set_shape(shape);
 }
 
-bool GameContainer::strike_check()
+void TestContainer::make_next_tetromino()
+{
+	int shape;
+	int i;
+	i = rand() % 100;
+	if (i <= oddblock_per) {      //막대기 나올확률 계산
+		shape = (rand() % 5);
+	}
+	else shape = (rand() % 5 + 5);
+	m_next_tetromino.set_shape(shape);
+	m_next_tetromino.set_angle(0);
+	show_next_tetromino();
+}
+
+bool TestContainer::strike_check()
 {
 	int i, j;
 	int block_dat;
@@ -261,10 +260,10 @@ bool GameContainer::strike_check()
 	return 0;
 }
 
-void GameContainer::merge_tetromino()
+void TestContainer::merge_tetromino()
 {
 	int i, j;
-	for (i = 0; i < 4; i++) 
+	for (i = 0; i < 4; i++)
 	{
 		for (j = 0; j < 4; j++)
 		{
@@ -275,14 +274,14 @@ void GameContainer::merge_tetromino()
 	show_total_block();
 }
 
-void GameContainer::tetromino_start()
+void TestContainer::tetromino_start()
 {
 	tetromino_x = 5;
 	tetromino_y = -3;
 	m_cur_tetromino.set_angle(0);
 }
 
-int GameContainer::move_tetromino()
+int TestContainer::move_tetromino()
 {
 	erase_cur_tetromino();
 
@@ -307,33 +306,57 @@ int GameContainer::move_tetromino()
 	return 0;
 }
 
-void GameContainer::rotate_tetromino()
+void TestContainer::rotate_tetromino()
 {
 	m_cur_tetromino.set_angle((m_cur_tetromino.get_angle() + 1) % 4);
 }
 
-void GameContainer::show_gameover()
-{
-	setColor(RED);
-	gotoxy(15, 8);
-	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┓";
-	gotoxy(15, 9);
-	cout << "┃ **************************┃";
-	gotoxy(15, 10);
-	cout << "┃ *        GAME OVER       *┃";
-	gotoxy(15, 11);
-	cout << "┃ **************************┃";
-	gotoxy(15, 12);
-	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛";
-	fflush(stdin);
-	Sleep(1000);
+//void TestContainer::show_gameover()
+//{
+//	setColor(RED);
+//	gotoxy(15, 8);
+//	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┓";
+//	gotoxy(15, 9);
+//	cout << "┃ **************************┃";
+//	gotoxy(15, 10);
+//	cout << "┃ *        Test OVER       *┃";
+//	gotoxy(15, 11);
+//	cout << "┃ **************************┃";
+//	gotoxy(15, 12);
+//	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛";
+//	fflush(stdin);
+//	Sleep(1000);
+//
+//	_getche();
+//	system("cls");
+//}
+//
+//void TestContainer::show_gamestat()
+//{
+//	static int printed_text = 0;
+//	setColor(GRAY);
+//	if (printed_text == 0)
+//	{
+//		gotoxy(35, 7);
+//		cout << "STAGE";
+//
+//		gotoxy(35, 9);
+//		cout << "SCORE";
+//
+//		gotoxy(35, 12);
+//		cout << "LINES";
+//
+//
+//	}
+//	gotoxy(41, 7);
+//	cout << m_level + 1;
+//	gotoxy(35, 10);
+//	cout << m_score;
+//	gotoxy(35, 13);
+//	cout << stage_data[m_level].get_clear_line() - m_lines;
+//}
 
-	_getche();
-	system("cls");
-}
-
-
-void GameContainer::check_full_line()
+void TestContainer::check_full_line()
 {
 	int i, j, k;
 	for (i = 0; i < 20; i++)
@@ -369,13 +392,43 @@ void GameContainer::check_full_line()
 			for (j = 1; j < 13; j++)
 				m_total_block[0][j] = 0;
 			m_score += 100 + (m_level * 10) + (rand() % 10);
-			
+			show_gamestat();
 		}
 	}
 }
+//
+//const Stage(&TestContainer::get_stage_data())[10]
+//{
+//	return stage_data;
+//}
 
-const Stage(&GameContainer::get_stage_data())[10]
+void TestContainer::get_tetromino_color(const int& shape)
 {
-	return stage_data;
+	switch (shape)
+	{
+	case 0: 
+	case 1:
+	case 2:
+	case 3:
+		setColor(RED);
+		break;
+	case 4: //네모모양 ㅁ
+		setColor(BLUE);
+		break;
+	case 5: //'ㅓ' 모양
+		setColor(SKY_BLUE);
+		break;
+	case 6: //'ㄱ'모양
+		setColor(WHITE);
+		break;
+	case 7: //'ㄴ' 모양
+		setColor(YELLOW);
+		break;
+	case 8: //'Z' 모양
+		setColor(VOILET);
+		break;
+	case 9: //'S' 모양
+		setColor(GREEN);
+		break;
+	}
 }
-

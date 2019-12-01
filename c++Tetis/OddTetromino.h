@@ -1,11 +1,16 @@
 #pragma once
-class Tetromino
+#include "Tetromino.h"
+class OddTetromino :
+	public Tetromino
 {
 private:
-	int m_shape;
-	int m_angle;
+	const char m_tetrominos[10][4][4][4] = {
+		//real ㅁ 모양
+		1,1,1,0,1,0,1,0,1,1,1,0,0,0,0,0,	1,1,1,0,1,0,1,0,1,1,1,0,0,0,0,0,	1,1,1,0,1,0,1,0,1,1,1,0,0,0,0,0,	1,1,1,0,1,0,1,0,1,1,1,0,0,0,0,0,
+		//1__1 모양
+		0,0,0,0,1,0,0,1,1,1,1,1,0,0,0,0,	0,1,1,0,0,0,1,0,0,0,1,0,0,1,1,0,	0,0,0,0,1,1,1,1,1,0,0,1,0,0,0,0,	0,1,1,0,0,1,0,0,0,1,0,0,0,1,1,0,
 
-	const char m_tetrominos[7][4][4][4] = {
+		1,1,1,0,0,0,1,0,0,0,1,0,0,0,1,0,	1,1,1,1,1,0,0,0,1,0,0,0,0,0,0,0,	1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,0,	0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,
 		//막대모양 1
 		1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,	1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,	1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,	1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,
 
@@ -29,16 +34,8 @@ private:
 
 	};
 public:
-	Tetromino();
-	~Tetromino();
-	void set_shape(const int& shape);
-	void set_angle(const int& angle);
-	int get_shape() const;
-	int get_angle() const;
-	//char* get_cur_tetromino() const;
-	virtual const char(&get_tetromino())[4][4];
-	
-	/*char* get_next_tetromino() const;*/
-	
+	OddTetromino();
+	const char(&get_tetromino())[4][4];
+
 };
 

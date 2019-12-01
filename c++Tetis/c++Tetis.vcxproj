@@ -23,8 +23,10 @@
     <ClCompile Include="GameContainer.cpp" />
     <ClCompile Include="LogoContainer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="OddTetromino.cpp" />
     <ClCompile Include="SelectLevelContainer.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="TestContainer.cpp" />
     <ClCompile Include="tetrisCreatedByC.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -35,8 +37,10 @@
     <ClInclude Include="Container.h" />
     <ClInclude Include="GameContainer.h" />
     <ClInclude Include="LogoContainer.h" />
+    <ClInclude Include="OddTetromino.h" />
     <ClInclude Include="SelectLevelContainer.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="TestContainer.h" />
     <ClInclude Include="Tetromino.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
