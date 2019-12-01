@@ -2,8 +2,4 @@
 # 이 .gitignore 파일은 Microsoft(R) Visual Studio에서 자동으로 만들어졌습니다.
 ################################################################################
 
-/.vs/c++Tetis/v16
-/.vs/c++Tetis/v15/Browse.VC.opendb
-/.vs/c++Tetis/v15/Browse.VC.db
-/c++Tetis/x64/Debug
-/x64/Debug
+/C++Tetris/.vs/C++Tetris/v16
