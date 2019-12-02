@@ -86,7 +86,7 @@ void TetrisPlayer::showLevelUp(GameContainer& cur_mode)
 {
 	/*cur_mode.set_level(cur_mode.get_level() + 1);
 	m_modeCnt++;*/
-	GameContainer& next_mode = m_gcArray[m_modeCnt];
+	GameContainer& next_mode = *m_gcArray[m_modeCnt];
 	next_mode.set_lines(0);
 	next_mode.show_total_block(); //스테이지에 대한 출력변화를 바로 보여주기위해 추가
 	next_mode.show_gamestat();
@@ -118,7 +118,7 @@ TetrisPlayer::TetrisPlayer()
 {
 }
 
-TetrisPlayer::TetrisPlayer(GameContainer* _gc)
+TetrisPlayer::TetrisPlayer(GameContainer** _gc)
 	:m_gcArray{ _gc }, m_frame{ 0 }, m_keytemp{ 0 }, m_is_gameOver{0},
 	m_speed{ 0 }, m_modeCnt{0}
 {
@@ -132,7 +132,7 @@ void TetrisPlayer::run()
 	init();
 	while (1)
 	{
-		GameContainer& cur_mode = m_gcArray[m_modeCnt];
+		GameContainer& cur_mode = *m_gcArray[m_modeCnt];
 		cur_mode.init();
 		cur_mode.show_total_block();  // 인터페이스 형성
 		cur_mode.make_cur_tetromino();// 블록 모양 생성
