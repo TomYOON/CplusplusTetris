@@ -25,7 +25,8 @@ private:
 	void getKeySpace(GameContainer& cur_mode);
 	void showScreen(GameContainer& cur_mode, int speed);
 	void setSpeed(int s);
-	void showLevelUp(GameContainer& cur_mode);
+	void showStageUp(GameContainer& cur_mode);
+	void showModeUp(GameContainer& cur_mode);
 	void showGameOver(GameContainer& cur_mode);
 	bool isStoryEnd();
 	bool isStageClear(Stage& cs, GameContainer& cm);

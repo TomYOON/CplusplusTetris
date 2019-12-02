@@ -9,6 +9,8 @@ protected:
 	char m_total_block[21][14] = { 0, };
 	int tetromino_x;
 	int tetromino_y;
+	// 각 gameContainer 가 출력할 스테이지 개수
+	int m_maxStage = 10; 
 private:
 	int m_level;
 	int m_score;
@@ -16,7 +18,7 @@ private:
 
 	Tetromino m_cur_tetromino, m_next_tetromino;
 	Stage stage_data[10]
-		= { Stage(40,20,1), Stage(38,18,20), Stage(35,18,20), Stage(30,17,20), Stage(25,16,20),
+		= { Stage(40,20,0), Stage(38,18,20), Stage(35,18,20), Stage(30,17,20), Stage(25,16,20),
 	Stage(20,14,20), Stage(15,14,20), Stage(10,13,20), Stage(6,12,20), Stage(4,11,99999) };
 public:
 	GameContainer();
@@ -27,6 +29,7 @@ public:
 	int get_level() const;
 	int get_lines() const;
 	int get_tetromino_shape() const;
+	int get_max_stage() const;
 	void set_level(const int& level);
 	void set_lines(const int& lines);
 	void set_tetromino_x(const int& x);
