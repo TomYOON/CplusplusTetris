@@ -82,10 +82,16 @@ void TetrisPlayer::setSpeed(int s)
 	m_speed = s;
 }
 
-void TetrisPlayer::showLevelUp(GameContainer& cur_mode)
+void TetrisPlayer::showStageUp(GameContainer& cur_mode)
 {
-	/*cur_mode.set_level(cur_mode.get_level() + 1);
-	m_modeCnt++;*/
+	cur_mode.set_level(cur_mode.get_level() + 1);
+	cur_mode.set_lines(0);
+	cur_mode.show_total_block(); //스테이지에 대한 출력변화를 바로 보여주기위해 추가
+	cur_mode.show_gamestat();
+}
+
+void TetrisPlayer::showModeUp(GameContainer& cur_mode)
+{
 	GameContainer& next_mode = *m_gcArray[m_modeCnt];
 	next_mode.set_lines(0);
 	next_mode.show_total_block(); //스테이지에 대한 출력변화를 바로 보여주기위해 추가
@@ -169,16 +175,18 @@ void TetrisPlayer::run()
 			Stage cur_stage = cur_mode.get_stage_data()[cur_mode.get_level()];
 			showScreen(cur_mode, cur_stage.get_speed());
 			if (isStageClear(cur_stage, cur_mode)) {
-				m_modeCnt++;
-				if (isStoryEnd()) return;
-				showLevelUp(cur_mode);
+				if (cur_mode.get_level() < cur_mode.get_max_stage()) showStageUp(cur_mode);
+				else {
+					m_modeCnt++;
+					if (isStoryEnd()) return;
+					showModeUp(cur_mode);
+					cur_mode.init();
+				}
 				cur_mode.gotoxy(77, 23);
 				Sleep(15);         //루프의 속도를 조절하기 위해서
 				cur_mode.gotoxy(77, 23);
-				cur_mode.init();
-				break;
 			}
-			if (isGameOver()) {
+			else if (isGameOver()) {
 				showGameOver(cur_mode);
 				m_is_gameOver = 0;
 				cur_mode.setColor(GRAY);

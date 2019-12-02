@@ -45,6 +45,11 @@ int GameContainer::get_tetromino_shape() const
 	return m_cur_tetromino.get_shape();
 }
 
+int GameContainer::get_max_stage() const
+{
+	return m_maxStage;
+}
+
 void GameContainer::set_level(const int& level)
 {
 	m_level = level;
@@ -95,6 +100,7 @@ void GameContainer::init()
 	m_lines = 0;
 	m_ab_x = 5;
 	m_ab_y = 1;
+	m_score = 0;
 }
 
 void GameContainer::show_tetromino(const int& x, const int& y)
