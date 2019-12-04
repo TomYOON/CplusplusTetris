@@ -24,6 +24,7 @@
     <ClCompile Include="LogoContainer.cpp" />
     <ClCompile Include="main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="OddContainer.cpp" />
     <ClCompile Include="OddTetromino.cpp" />
@@ -35,6 +36,7 @@
     <ClCompile Include="test_main.cpp" />
     <ClCompile Include="tetrisCreatedByC.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="TetrisPlayer.cpp" />
     <ClCompile Include="Tetromino.cpp" />

@@ -6,7 +6,7 @@ class OddContainer :
 {
 private:
 	OddTetromino m_cur_oddtetromino, m_next_oddtetromino;
-	int odd_per = 100;
+	int odd_per = 15; // 이상한 블럭 나올 확률
 public:
 	void show_tetromino(const int& x, const int& y);
 	void show_tetromino(OddTetromino& tetromino, const int& x, const int& y);
@@ -18,6 +18,7 @@ public:
 	bool strike_check();
 	void merge_tetromino();
 	void show_next_tetromino();
+	void show_gamestat();
 
 };
 

@@ -7,6 +7,7 @@
 #include <iostream>
 #include <Windows.h>
 #include "OddContainer.h"
+#include "RandomFieldContainer.h"
 #include "SelectModeContainer.h"
 using namespace std;
 
@@ -18,8 +19,9 @@ int main(void) {
 	SelectLevelContainer slc;
 	GameContainer g1;
 	OddContainer O1;
+	RandomFieldContainer r1;
 	SelectModeContainer smc;
-	GameContainer* gcArray[1] = {&O1,};
+	GameContainer* gcArray[1] = {&r1,};
 	GameContainer* levelgc[1] = { &g1 };
 	Stage stage;
 	TetrisPlayer storyMode(gcArray);

@@ -38,6 +38,10 @@ void RandomFieldContainer::init()
 	m_ab_y = 1;
 }
 
+void RandomFieldContainer::show_gamestat()
+{
+}
+
 void RandomFieldContainer::awlfield_init()
 {
 	for (int i = 0; i < 20; i++)

@@ -40,7 +40,7 @@ public:
 	virtual void show_total_block();
 	virtual void show_next_tetromino();
 	void show_gameover();
-	void show_gamestat();
+	virtual void show_gamestat();
 	virtual void make_cur_tetromino();
 	virtual void make_next_tetromino();
 	virtual void erase_cur_tetromino();

@@ -9,6 +9,7 @@ private:
 	void sewerfield_init();  // 하수구 필드
 public:
 	void init();
+	void show_gamestat();
 	
 
 };

@@ -206,3 +206,7 @@ void OddContainer::show_next_tetromino()
 	/*show_cur_tetromino(15,1);*/
 	show_tetromino(m_next_oddtetromino, 15, 1);
 }
+
+void OddContainer::show_gamestat()
+{
+}
