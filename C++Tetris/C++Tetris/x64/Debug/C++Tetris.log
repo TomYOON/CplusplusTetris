@@ -1,17 +1,2 @@
-﻿  Container.cpp
-  GameContainer.cpp
-  LogoContainer.cpp
-  OddContainer.cpp
-  OddTetromino.cpp
-  RandomFieldContainer.cpp
-  SelectLevelContainer.cpp
-  SelectModeContainer.cpp
-  Stage.cpp
-  StoryContainer.cpp
-  test_main.cpp
-  TetrisPlayer.cpp
-  Tetromino.cpp
-  소스.cpp
-  코드를 생성하고 있습니다...
-C:\Users\yoon\Documents\GitHub\CplusplusTetris\C++Tetris\C++Tetris\RandomFieldContainer.cpp(9,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+﻿  TetrisPlayer.cpp
   C++Tetris.vcxproj -> C:\Users\yoon\Documents\GitHub\CplusplusTetris\C++Tetris\x64\Debug\C++Tetris.exe
