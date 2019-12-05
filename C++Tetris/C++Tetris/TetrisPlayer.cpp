@@ -120,13 +120,13 @@ bool TetrisPlayer::isGameOver()
 }
 
 TetrisPlayer::TetrisPlayer()
-	:TetrisPlayer(nullptr)
+	:TetrisPlayer(nullptr, 0)
 {
 }
 
-TetrisPlayer::TetrisPlayer(GameContainer** _gc)
+TetrisPlayer::TetrisPlayer(GameContainer** _gc , int mode_len)
 	:m_gcArray{ _gc }, m_frame{ 0 }, m_keytemp{ 0 }, m_is_gameOver{0},
-	m_speed{ 0 }, m_modeCnt{0}
+	m_speed{ 0 }, m_modeCnt{ 0 }, m_MODE_LEN{mode_len}
 {
 }
 TetrisPlayer::~TetrisPlayer()
