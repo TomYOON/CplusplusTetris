@@ -24,8 +24,8 @@ int main(void) {
 	GameContainer* gcArray[3] = {&r1,&O1,&r1};
 	GameContainer* levelgc[1] = { &g1 };
 	Stage stage;
-	TetrisPlayer storyMode(gcArray);
-	TetrisPlayer levelMode(levelgc);
+	TetrisPlayer storyMode(gcArray, 3);
+	TetrisPlayer levelMode(levelgc, 1);
 
 	while (1)
 	{
