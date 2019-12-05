@@ -1019,7 +1019,23 @@ void StoryContainer::startStory(int stage)
 	case 2:
 		showStory3();
 		break;
+	case 3:
+		showStory4();
+		break;
+	case 4:
+		showStory5();
+		break;
+	case 5:
+		showStory6();
+		break;
+	case 6:
+		showStory7();
+		break;
+	case 7:
+		showStory8();
+		break;
 	}
+
 }
 
 void StoryContainer::failedStory(int stage)
@@ -1034,5 +1050,18 @@ void StoryContainer::failedStory(int stage)
 	case 2:
 		showStory3_1();
 		break;
+	case 3:
+		showStory4_1();
+		break;
+	case 4:
+		showStory5_1();
+		break;
+	case 5:
+		showStory6_1();
+		break;
+	case 6:
+		showStory7_1();
+		break;
 	}
+
 }

@@ -11,6 +11,7 @@ void TetrisPlayer::init()
 	m_is_gameOver = 0;
 	m_speed = 0;
 	m_modeCnt = 0;
+	m_storyCnt = 0;
 }
 
 void TetrisPlayer::getKeyUp(GameContainer* cur_mode)
@@ -84,6 +85,12 @@ void TetrisPlayer::setSpeed(int s)
 
 void TetrisPlayer::showStageUp(GameContainer* cur_mode)
 {
+	m_storyCnt++;
+	system("cls");
+	if (typeid(cur_mode) != typeid(GameContainer&)) {
+		sc.startStory(m_storyCnt);
+		system("cls");
+	}
 	cur_mode->set_level(cur_mode->get_level() + 1);
 	cur_mode->set_lines(0);
 	cur_mode->show_total_block(); //스테이지에 대한 출력변화를 바로 보여주기위해 추가
@@ -92,8 +99,13 @@ void TetrisPlayer::showStageUp(GameContainer* cur_mode)
 
 void TetrisPlayer::showModeUp()
 {
-	cur_mode = m_gcArray[m_modeCnt];
+	m_storyCnt++;
 	system("cls");
+	if (typeid(cur_mode) != typeid(GameContainer&)) {
+		sc.startStory(m_storyCnt);
+		system("cls");
+	}
+	cur_mode = m_gcArray[m_modeCnt];
 	cur_mode->init();
 	cur_mode->set_lines(0);
 	cur_mode->show_total_block(); //스테이지에 대한 출력변화를 바로 보여주기위해 추가
@@ -139,6 +151,7 @@ TetrisPlayer::TetrisPlayer()
 TetrisPlayer::TetrisPlayer(GameContainer** _gc , int mode_len)
 	: m_gcArray{ _gc }, m_frame{ 0 }, m_keytemp{ 0 }, m_is_gameOver{ 0 },
 	m_speed{ 0 }, m_modeCnt{ 0 }, m_MODE_LEN{ mode_len }, cur_mode{ _gc[0] }
+	, m_storyCnt{0}
 {
 }
 TetrisPlayer::~TetrisPlayer()
@@ -154,7 +167,7 @@ void TetrisPlayer::run()
 		cur_mode->init();
 
 		if (typeid(cur_mode) != typeid(GameContainer&)) {
-			sc.startStory(m_modeCnt);
+			sc.startStory(m_storyCnt);
 			system("cls");
 		}
 		
@@ -201,6 +214,8 @@ void TetrisPlayer::run()
 				else {
 					m_modeCnt++;
 					if (isStoryEnd()) {
+						system("cls");
+						sc.showStory8();
 						system("cls");
 						return;
 					}
