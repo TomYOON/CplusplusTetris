@@ -100,7 +100,17 @@ void TetrisPlayer::showModeUp(GameContainer& cur_mode)
 
 void TetrisPlayer::showGameOver(GameContainer& cur_mode)
 {
-	cur_mode.show_gameover();  //게임오버 메세지 출력
+	if (typeid(cur_mode) == typeid(GameContainer)) {
+		cur_mode.show_gameover();
+	}
+	else {
+		system("cls");
+		sc.failedStory(m_modeCnt);
+		
+	}
+	system("cls");
+	;  //게임오버 메세지 출력
+	
 	cur_mode.setColor(GRAY);
 }
 
@@ -140,11 +150,20 @@ void TetrisPlayer::run()
 	{
 		GameContainer& cur_mode = *m_gcArray[m_modeCnt];
 		cur_mode.init();
+
+		if (typeid(cur_mode) != typeid(GameContainer)) {
+			sc.startStory(m_modeCnt);
+			system("cls");
+		}
+		
+
 		cur_mode.show_total_block();  // 인터페이스 형성
 		cur_mode.make_cur_tetromino();// 블록 모양 생성
 		cur_mode.show_next_tetromino(); // 다음 블록 모양 출력
+		
 		cur_mode.tetromino_start();
 		cur_mode.show_gamestat();
+		
 		for (m_frame = 1; 1; m_frame++)
 		{
 			if (_kbhit())      //키 입력이 일어나면
@@ -188,7 +207,7 @@ void TetrisPlayer::run()
 				cur_mode.gotoxy(77, 23);
 				Sleep(15);         //루프의 속도를 조절하기 위해서
 				cur_mode.gotoxy(77, 23);
-				m_keytemp = 'a'; // 버퍼비워주기
+				//m_keytemp = 'a'; // 버퍼비워주기
 			}
 			else if (isGameOver()) {
 				showGameOver(cur_mode);

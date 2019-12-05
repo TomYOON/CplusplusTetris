@@ -1,3 +1,2 @@
-﻿  RandomFieldContainer.cpp
-C:\Users\yoon\Documents\GitHub\CplusplusTetris\C++Tetris\C++Tetris\RandomFieldContainer.cpp(10,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+﻿  TetrisPlayer.cpp
   C++Tetris.vcxproj -> C:\Users\yoon\Documents\GitHub\CplusplusTetris\C++Tetris\x64\Debug\C++Tetris.exe

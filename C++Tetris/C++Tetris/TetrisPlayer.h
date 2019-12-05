@@ -1,6 +1,7 @@
 #pragma once
 #include "Stage.h"
 #include "GameContainer.h"
+#include "StoryContainer.h"
 
 class TetrisPlayer
 {
@@ -13,6 +14,7 @@ private:
 	int m_MODE_LEN = 2;
 	static const int m_CHEAT_KEY = 93; //"]" 버튼 누르면 다음스테이지
 	GameContainer** m_gcArray;
+	StoryContainer sc;
 	int m_frame;
 	char m_keytemp;
 	int m_is_gameOver;
