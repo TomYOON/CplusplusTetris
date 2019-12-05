@@ -188,7 +188,7 @@ void TetrisPlayer::run()
 				cur_mode.gotoxy(77, 23);
 				Sleep(15);         //루프의 속도를 조절하기 위해서
 				cur_mode.gotoxy(77, 23);
-				m_keytemp = 'a'; // 버퍼비워주기
+				//m_keytemp = 'a'; // 버퍼비워주기
 			}
 			else if (isGameOver()) {
 				showGameOver(cur_mode);

@@ -158,7 +158,7 @@ void StoryContainer::printScript(string script1, const int& color1, string scrip
 	gotoxy(0, 0);
 }
 
-void StoryContainer::showStory1()
+void StoryContainer::showStory1() //1단계 시작전
 {
 	showScreen();
 	showChar(character[1]);
@@ -183,7 +183,7 @@ void StoryContainer::showStory1()
 		"", GRAY);
 }
 
-void StoryContainer::showStory1_1()
+void StoryContainer::showStory1_1() //1단계 실패
 {
 	showScreen();
 	showChar(character[11]);

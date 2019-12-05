@@ -3,6 +3,7 @@
 #include <iostream>
 #include <Windows.h>
 #include <time.h>
+
 using namespace std;
 void RandomFieldContainer::init()
 {
@@ -40,6 +41,24 @@ void RandomFieldContainer::init()
 
 void RandomFieldContainer::show_gamestat()
 {
+static int printed_text = 0;
+setColor(GRAY);
+if (printed_text == 0)
+{
+	gotoxy(35, 7);
+	cout << "STAGE";
+
+
+
+	gotoxy(35, 12);
+	cout << "LINES";
+
+
+}
+gotoxy(41, 7);
+cout << m_level + 1;
+gotoxy(35, 13);
+cout << stage_data[m_level].get_clear_line() - m_lines;
 }
 
 void RandomFieldContainer::awlfield_init()
