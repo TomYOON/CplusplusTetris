@@ -10,7 +10,7 @@ private:
 	static constexpr int  m_KEY_RIGHT = 0x4d;
 	static constexpr int  m_KEY_UP = 0x48;
 	static constexpr int  m_KEY_DOWN = 0x50;
-	int m_MODE_LEN = 3;
+	int m_MODE_LEN = 2;
 	static const int m_CHEAT_KEY = 93; //"]" 버튼 누르면 다음스테이지
 	GameContainer** m_gcArray;
 	int m_frame;

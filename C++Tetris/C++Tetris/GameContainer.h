@@ -10,12 +10,12 @@ protected:
 	int tetromino_x;
 	int tetromino_y;
 	// 각 gameContainer 가 출력할 스테이지 개수
-	int m_maxStage = 10; 
+	int m_maxStage = 2; 
 	int m_level;
 	int m_score;
 	int m_lines;
 	Stage stage_data[10]
-		= { Stage(40,20,1), Stage(38,18,20), Stage(35,18,20), Stage(30,17,20), Stage(25,16,20),
+		= { Stage(40,20,1), Stage(38,18,1), Stage(35,18,1), Stage(30,17,1), Stage(25,16,1),
 	Stage(20,14,20), Stage(15,14,20), Stage(10,13,20), Stage(6,12,20), Stage(4,11,99999) };
 private:
 
