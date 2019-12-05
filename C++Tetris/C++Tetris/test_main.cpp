@@ -21,7 +21,7 @@ int main(void) {
 	OddContainer O1;
 	RandomFieldContainer r1;
 	SelectModeContainer smc;
-	GameContainer* gcArray[3] = {&r1,&O1,&r1};
+	GameContainer* gcArray[3] = {&O1,&r1,&r1};
 	GameContainer* levelgc[1] = { &g1 };
 	Stage stage;
 	TetrisPlayer storyMode(gcArray, 3);
