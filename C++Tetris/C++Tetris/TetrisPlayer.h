@@ -22,24 +22,24 @@ private:
 	int m_modeCnt;
 	GameContainer* cur_mode;
 	void init();
-	void getKeyUp(GameContainer& cur_mode);
-	void getKeyDown(GameContainer& cur_mode);
-	void getKeyLeft(GameContainer& cur_mode);
-	void getKeyRight(GameContainer& cur_mode);
-	void getKeySpace(GameContainer& cur_mode);
-	void showScreen(GameContainer& cur_mode, int speed);
+	void getKeyUp(GameContainer* cur_mode);
+	void getKeyDown(GameContainer* cur_mode);
+	void getKeyLeft(GameContainer* cur_mode);
+	void getKeyRight(GameContainer* cur_mode);
+	void getKeySpace(GameContainer* cur_mode);
+	void showScreen(GameContainer* cur_mode, int speed);
 	void setSpeed(int s);
-	void showStageUp(GameContainer& cur_mode);
-	void showModeUp(GameContainer& cur_mode);
-	void showGameOver(GameContainer& cur_mode);
+	void showStageUp(GameContainer* cur_mode);
+	void showModeUp();
+	void showGameOver(GameContainer* cur_mode);
 	bool isStoryEnd();
-	bool isStageClear(Stage& cs, GameContainer& cm);
+	bool isStageClear(Stage& cs, GameContainer* cm);
 	bool isGameOver();
 
 
 public:
 	TetrisPlayer();
-	TetrisPlayer(GameContainer**gc, int mode_len);
+	TetrisPlayer(GameContainer** gc, int mode_len);
 	~TetrisPlayer();
 	void run();
 
