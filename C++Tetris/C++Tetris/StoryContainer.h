@@ -1,5 +1,6 @@
 #pragma once
 #include "Container.h"
+#include "BgmPlayer.h"
 #include <Windows.h>
 #include <conio.h>
 #include <iostream>
@@ -9,6 +10,7 @@ class StoryContainer
 	:public Container
 {
 private:
+	BgmPlayer bp;
 	string character[27][24] = { {
 "                                      ",
 "                                      ",

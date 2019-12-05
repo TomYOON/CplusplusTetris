@@ -160,6 +160,7 @@ void StoryContainer::printScript(string script1, const int& color1, string scrip
 
 void StoryContainer::showStory1() //1단계 시작전
 {
+	bp.play("humor");
 	showScreen();
 	showChar(character[1]);
 	printName("      김 쓰 봉");
@@ -181,6 +182,7 @@ void StoryContainer::showStory1() //1단계 시작전
 	printScript("오늘도 할 일 없는 나는 우리집 쓰레기통을 들고 길을 나선다.", GRAY,
 		"", GRAY,
 		"", GRAY);
+	bp.stop();
 }
 
 void StoryContainer::showStory1_1() //1단계 실패
