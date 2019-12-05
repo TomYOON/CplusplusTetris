@@ -170,11 +170,12 @@ void TetrisPlayer::run()
 					}
 				}
 				if (m_keytemp == 32)   getKeySpace(cur_mode);//스페이스바를 눌렀을때
-				
+				if (m_keytemp == m_CHEAT_KEY) showStageUp(cur_mode);
 			}
 			Stage cur_stage = cur_mode.get_stage_data()[cur_mode.get_level()];
 			showScreen(cur_mode, cur_stage.get_speed());
 			if (isStageClear(cur_stage, cur_mode) || m_keytemp == m_CHEAT_KEY) {
+				if (m_keytemp == m_CHEAT_KEY) m_keytemp = 'a';
 				if (cur_mode.get_level() + 1 < cur_mode.get_max_stage()) showStageUp(cur_mode);
 				else {
 					m_modeCnt++;
@@ -188,7 +189,7 @@ void TetrisPlayer::run()
 				cur_mode.gotoxy(77, 23);
 				Sleep(15);         //루프의 속도를 조절하기 위해서
 				cur_mode.gotoxy(77, 23);
-				m_keytemp = 'a'; // 버퍼비워주기
+				//m_keytemp = 'a'; // 버퍼비워주기
 			}
 			else if (isGameOver()) {
 				showGameOver(cur_mode);

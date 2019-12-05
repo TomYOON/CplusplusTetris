@@ -18,6 +18,7 @@ private:
 	int m_is_gameOver;
 	int m_speed;
 	int m_modeCnt;
+	GameContainer* cur_mode;
 	void init();
 	void getKeyUp(GameContainer& cur_mode);
 	void getKeyDown(GameContainer& cur_mode);

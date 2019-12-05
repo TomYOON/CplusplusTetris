@@ -31,7 +31,7 @@ public:
 	int get_level() const;
 	int get_lines() const;
 	int get_tetromino_shape() const;
-	int get_max_stage() const;
+	virtual int get_max_stage() const;
 	void set_level(const int& level);
 	void set_lines(const int& lines);
 	void set_tetromino_x(const int& x);
