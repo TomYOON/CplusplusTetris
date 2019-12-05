@@ -718,5 +718,6 @@ public:
 	void showStory7();//7단계
 	void showStory7_1();//7단계 실패 시
 	void showStory8();//8단계(엔딩)
-
+	void startStory(int stage);
+	void failedStory(int stage);
 };

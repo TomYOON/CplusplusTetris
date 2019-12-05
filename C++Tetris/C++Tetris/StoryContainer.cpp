@@ -1006,3 +1006,33 @@ void StoryContainer::showStory8()
 		"                                                    - ³¡ -", GREEN,
 		"", GRAY);
 }
+
+void StoryContainer::startStory(int stage)
+{
+	switch (stage) {
+	case 0:
+		showStory1();
+		break;
+	case 1:
+		showStory2();
+		break;
+	case 2:
+		showStory3();
+		break;
+	}
+}
+
+void StoryContainer::failedStory(int stage)
+{
+	switch (stage) {
+	case 0:
+		showStory1_1();
+		break;
+	case 1:
+		showStory2_1();
+		break;
+	case 2:
+		showStory3_1();
+		break;
+	}
+}
