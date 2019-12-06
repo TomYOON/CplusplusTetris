@@ -50,6 +50,10 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="SpeedContainer.cpp" />
+    <ClCompile Include="ClothTetromino.cpp" />
+    <ClCompile Include="ClothContainer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Container.h">
@@ -92,6 +96,8 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="SpeedContainer.h" />
+    <ClInclude Include="ClothTetromino.h" />
+    <ClInclude Include="ClothContainer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="소스 파일">
