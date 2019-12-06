@@ -265,7 +265,7 @@ void StoryContainer::showStory2()
 	showChar(character[18]);
 	printName("      소 장 님");
 	printScript("좋아, 그럼 일단 일당은 챙겨줄테니 오늘 하루 일해보고,", GRAY,
-		"정식 채용은 이후에 결정하겠네.", GRAY,
+		"정식 채용은 그 이후에 결정하겠네.", GRAY,
 		"", GRAY);
 	showChar(character[3]);
 	printName("      김 쓰 봉");
