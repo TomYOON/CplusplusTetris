@@ -20,9 +20,13 @@ void TetrisPlayer::getKeyUp(GameContainer* cur_mode)
 	{
 		cur_mode->erase_cur_tetromino(); //현재 블럭을 지우고
 		cur_mode->rotate_tetromino();//블럭의 앵글을 변경
-		//블럭이랑 충돌할 경우 원상태로 x--
+		//블럭이랑 충돌할 경우 원상태로 앵글 변경
 		if (cur_mode->strike_check() == 1) {
-			while (cur_mode->strike_check()) cur_mode->set_tetromino_x(cur_mode->get_tetromino_x() - 1);
+			while (cur_mode->strike_check()) {
+				cur_mode->rotate_tetromino();
+				cur_mode->rotate_tetromino();
+				cur_mode->rotate_tetromino();
+			}
 		}
 		cur_mode->show_tetromino(cur_mode->get_tetromino_x(), cur_mode->get_tetromino_y());  //변경된 블럭 출력
 	}
