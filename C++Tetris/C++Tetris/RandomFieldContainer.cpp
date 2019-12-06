@@ -129,3 +129,26 @@ void RandomFieldContainer::sewerfield_init()
 		}
 	}
 }
+
+void RandomFieldContainer::cloudfield_init()
+{
+	for (int i = 20; i > 0; i--)
+	{
+		for (int j = 0; j < 14; j++)
+		{
+			if ((j == 0) || (j == 13))
+			{
+				m_total_block[i][j] = 1;
+			}
+			else {
+				m_total_block[i][j] = 0;
+			}
+
+			if (i > 17 && i < 6 && j % 2) {
+				int k = rand() % 14;
+				m_total_block[i][k] = 1;
+			}
+
+		}
+	}
+}

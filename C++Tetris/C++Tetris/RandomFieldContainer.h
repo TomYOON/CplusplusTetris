@@ -7,6 +7,7 @@ private:
 	void awlfield_init(); //송곳필드
 	void stairsfield_init(); // 계단 필드
 	void sewerfield_init();  // 하수구 필드
+	void cloudfield_init();
 public:
 	void init();
 	void show_gamestat();
