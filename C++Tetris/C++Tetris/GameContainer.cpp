@@ -6,7 +6,7 @@
 using namespace std;
 
 GameContainer::GameContainer()
-	:GameContainer(5,1)
+	:GameContainer(42,6)
 {
 }
 
@@ -98,8 +98,6 @@ void GameContainer::init()
 	
 	//m_level = 0;
 	m_lines = 0;
-	m_ab_x = 5;
-	m_ab_y = 1;
 	m_score = 0;
 }
 
@@ -191,7 +189,7 @@ void GameContainer::show_total_block()
 			else { // 바닥에 앉은 블록은 회색으로 출력
 				setColor(DARK_GRAY);
 			}
-			gotoxy((j * 2) + m_ab_x, i + m_ab_y);
+			gotoxy((j * 2) + this->m_ab_x, i + this->m_ab_y);
 			// 블록이 앉은 자리는 출력을 한다.
 			if (m_total_block[i][j] == 1)
 			{
@@ -216,7 +214,7 @@ void GameContainer::show_next_tetromino()
 	for (i = 1; i < 7; i++)
 	{
 		// 다음 블록 출력 시작 위치로 이동후
-		gotoxy(33, i);
+		gotoxy(m_ab_x + 30, m_ab_y - 1 + i); // 33,i
 		// 박스를 출력
 		for (j = 0; j < 6; j++)
 		{
@@ -232,7 +230,7 @@ void GameContainer::show_next_tetromino()
 	}
 	// 박스 안에 다음 블록의 모양을 출력
 	/*show_cur_tetromino(15,1);*/
-	show_tetromino(m_next_tetromino, 15, 1);
+	show_tetromino(m_next_tetromino, 16, 1);
 }
 
 void GameContainer::make_cur_tetromino()
@@ -367,23 +365,23 @@ void GameContainer::show_gamestat()
 	setColor(GRAY);
 	if (printed_text == 0)
 	{
-		gotoxy(35, 7);
-		cout << "STAGE";
+		gotoxy(m_ab_x + 30, m_ab_y + 8); // 35 7
+		cout << "목표:";
 
-		gotoxy(35, 9);
-		cout << "SCORE";
+		//gotoxy(35, 9);
+		//cout << "SCORE";
 
-		gotoxy(35, 12);
-		cout << "LINES";
+		gotoxy(m_ab_x + 30, m_ab_y + 15);  // 35 12
+		cout << "남은 쓰레기 양";
 
 
 	}
-	gotoxy(41, 7);
-	cout << m_level + 1;
-	gotoxy(35, 10);
-	cout << m_score;
-	gotoxy(35, 13);
-	cout << stage_data[m_level].get_clear_line() - m_lines;
+	gotoxy(m_ab_x + 30, m_ab_y + 10); // 41 7
+	cout << "분리수거를 하자.";
+	//gotoxy(35, 10);
+	//cout << m_score;
+	gotoxy(m_ab_x + 30, m_ab_y + 17); // 35 13
+	cout << stage_data[m_level].get_clear_line() - m_lines << " KG";
 }
 
 void GameContainer::check_full_line()

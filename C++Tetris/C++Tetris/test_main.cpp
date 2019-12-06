@@ -38,8 +38,8 @@ int main(void) {
 	5단계 우주 쓰레기 파편
 	6단계 5단계 + 장애물
 	7단계 6단계 + 속도변화*/
-	GameContainer* gcArray[] = { &g1 ,&ac,&cc,&oc, &tc,&tpc,  &sc};
-	
+	//GameContainer* gcArray[] = { &g1 ,&ac,&cc,&oc, &tc,&tpc,  &sc};
+	GameContainer* gcArray[] = { &tc,&tpc,  &sc ,&g1 ,&ac,&cc,&oc };
 	Stage stage;
 	TetrisPlayer storyMode(gcArray, 7);
 

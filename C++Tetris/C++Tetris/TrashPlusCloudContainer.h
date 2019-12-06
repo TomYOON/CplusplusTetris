@@ -5,5 +5,6 @@ class TrashPlusCloudContainer :
 {
 public:
 	void init();
+	void show_gamestat();
 };
 
