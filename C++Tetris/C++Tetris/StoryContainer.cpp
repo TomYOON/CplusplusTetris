@@ -254,7 +254,7 @@ void StoryContainer::showStory2()
 		"", GRAY);
 	showChar(character[17]);
 	printName("      소 장 님");
-	printScript("흠... 마침 한 자리가 비어있긴 한데... 잘할 자신은 있나?", GRAY,
+	printScript("흠... 마침 가전제품 처리 한 자리가 비어있긴 한데... 잘할 자신은 있나?", GRAY,
 		"", GRAY,
 		"", GRAY);
 	showChar(character[9]);
@@ -271,6 +271,11 @@ void StoryContainer::showStory2()
 	printName("      김 쓰 봉");
 	printScript("감사합니다!", GRAY,
 		"", GRAY,
+		"", GRAY);
+	showChar(character[18]);
+	printName("      소 장 님");
+	printScript("가전제품은 직사각형 모양 블럭들만 처리하면 되니까, 평소보다 더 편할 수도 있어.", GRAY,
+		"처음이라고 긴장하지 말고 어디 한번 잘해보라구.", GRAY,
 		"", GRAY);
 	showChar(character[9]);
 	printScript("(좋아, 이번 기회에 내 가치를 증명해내는 거야!)", BLUE,
@@ -320,8 +325,13 @@ void StoryContainer::showStory3()
 		"", GRAY);
 	showChar(character[18]);
 	printName("      소 장 님");
-	printScript("오늘은 테스트 차원이라 널널했지만,", GRAY,
-		"내일부턴 일이 조금 더 힘들어질거야.", GRAY,
+	printScript("오늘은 가전제품 담당이라 널널했지만,", GRAY,
+		"내일부턴 의류 쓰레기를 처리해야 하기 때문에 더 힘들어질거야.", GRAY,
+		"", GRAY);
+	showChar(character[18]);
+	printName("      소 장 님");
+	printScript("이름만 들어서는 쉬워보이지만", GRAY,
+		"다양한 옷 모양 블럭들을 처리하는 게 그리 쉽지만은 않아서 그만두는 직원들도 많아...", GRAY,
 		"그 점은 각오되어 있겠지?", GRAY);
 	printName("      김 쓰 봉");
 	showChar(character[9]);
@@ -421,9 +431,14 @@ void StoryContainer::showStory4()
 		"", GRAY);
 	showChar(character[18]);
 	printName("      소 장 님");
-	printScript("오늘이 첫 출근이구만. 자네의 실력을 유감없이 보여주라고!", GRAY,
-		"", GRAY,
-		"", GRAY);
+	printScript("오늘이 첫 출근이구만...", GRAY,
+		"서울시 처리소는 아무래도 국내에서 가장 규모가 큰 곳이다 보니", GRAY,
+		"공사현장에서 나온 건축 자재들이 많이 들어온다네.", GRAY);
+	showChar(character[18]);
+	printName("      소 장 님");
+	printScript("초보자에게 쉬운 작업은 아니겠지만", GRAY,
+		"자네처럼 기본기가 탄탄한 사람이라면 문제 없을거야.", GRAY,
+		"자네 실력을 유감없이 보여주게나!", GRAY);
 	showChar(character[8]);
 	printName("      김 쓰 봉");
 	printScript("(오늘이 첫 출근.... 할 수 있다, 김쓰봉!)", BLUE,
@@ -619,6 +634,11 @@ void StoryContainer::showStory5()
 	showChar(character[25]);
 	printName("  브 라 운 박 사");
 	printScript("좋아요. 우주에 나가면 아마 지구에선 볼 수 없었던 형태의 쓰레기들이 많을 겁니다.", GRAY,
+		"우주 쓰레기의 상당수는 우주선, 인공위성들의 파편들입니다.", GRAY,
+		"", GRAY);
+	showChar(character[25]);
+	printName("  브 라 운 박 사");
+	printScript("그 말은 쓰레기들이 한 덩어리가 아니라 조각난 형태로 존재한다는 의미에요.", GRAY,
 		"우리는 그런 프라블럼을 컨트롤할 수 있는 사람을 찾고 있어요.", GRAY,
 		"그럼 바로 시작해볼까요?", GRAY);
 	showChar(character[9]);
