@@ -206,7 +206,7 @@ void ClothContainer::show_gamestat()
 
 	}
 	gotoxy(m_ab_x + 30, m_ab_y + 10); // 41 7
-	cout << "분리수거를 하자.";
+	cout << "의류 쓰레기를 차곡차곡 정리하자!";
 	//gotoxy(35, 10);
 	//cout << m_score;
 	gotoxy(m_ab_x + 30, m_ab_y + 17); // 35 13
