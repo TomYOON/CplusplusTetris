@@ -4,3 +4,8 @@
 .vs/c++Tetis/v16/ipch/AutoPCH/7d40a8558e158332/소스.ipch
 .vs/c++Tetis/v16/.suo
 *.db
+/.vs
+/c++Tetis/x64/Debug
+/C++Tetris/C++Tetris/x64/Debug/C++Tetris.tlog
+/C++Tetris/C++Tetris/x64/Debug
+/C++Tetris/x64/Debug
