@@ -1,40 +1,35 @@
-#include "OddContainer.h"
+#include "AppliancesContainer.h"
 #include <iostream>
-#include <string>
 using namespace std;
-
-void OddContainer::show_tetromino(const int& x, const int& y)
+void AppliancesContainer::show_tetromino(const int& x, const int& y)
 {
-	show_tetromino(m_cur_oddtetromino, x, y);
+	show_tetromino(m_cur_app_tetromino, x, y);
 }
 
-void OddContainer::show_tetromino(OddTetromino& tetromino, const int& x, const int& y)
+void AppliancesContainer::show_tetromino(AppliancesTetromino& tetromino, const int& x, const int& y)
 {
 	// 해당 블록에 맞는 색깔을 출력
 	switch (tetromino.get_shape())
 	{
-	case 0: 
-	case 1:
-	case 2:
-	case 3:
-		setColor(RED); // odd tetromino
+	case 0: //막대모양 1
+		setColor(RED);
 		break;
-	case 4: //네모모양 ㅁ
+	case 1: //네모모양 ㅁ
 		setColor(BLUE);
 		break;
-	case 5: //'ㅓ' 모양
+	case 2: //'ㅓ' 모양
 		setColor(SKY_BLUE);
 		break;
-	case 6: //'ㄱ'모양
+	case 3: //'ㄱ'모양
 		setColor(WHITE);
 		break;
-	case 7: //'ㄴ' 모양
+	case 4: //'ㄴ' 모양
 		setColor(YELLOW);
 		break;
-	case 8: //'Z' 모양
+	case 5: //'Z' 모양
 		setColor(VOILET);
 		break;
-	case 9: //'S' 모양
+	case 6: //'S' 모양
 		setColor(GREEN);
 		break;
 	}
@@ -59,31 +54,30 @@ void OddContainer::show_tetromino(OddTetromino& tetromino, const int& x, const i
 	gotoxy(77, 23);
 }
 
-void OddContainer::make_cur_tetromino()
+void AppliancesContainer::make_cur_tetromino()
 {
-	int shape =rand() % 7;
-	m_cur_oddtetromino.set_shape(shape);
+	int shape;
+	shape = rand() % 7;
+	m_cur_app_tetromino.set_shape(shape);
 }
 
-void OddContainer::make_next_tetromino()
+void AppliancesContainer::make_next_tetromino()
 {
-	int i;
-	int shape = rand() % 7;
-	
-	m_next_oddtetromino.set_shape(shape);
-	m_next_oddtetromino.set_angle(0);
+	int shape;
+	shape = rand() % 7;
+	m_next_app_tetromino.set_shape(shape);
+	m_next_app_tetromino.set_angle(0);
 	show_next_tetromino();
-
 }
 
-void OddContainer::erase_cur_tetromino()
+void AppliancesContainer::erase_cur_tetromino()
 {
 	int i, j;
 	for (i = 0; i < 4; i++)
 	{
 		for (j = 0; j < 4; j++)
 		{
-			if (m_cur_oddtetromino.get_tetromino()[j][i] == 1)
+			if (m_cur_app_tetromino.get_tetromino()[j][i] == 1)
 			{
 				gotoxy((i + tetromino_x) * 2 + m_ab_x, j + tetromino_y + m_ab_y);
 				cout << "  ";
@@ -94,7 +88,7 @@ void OddContainer::erase_cur_tetromino()
 	}
 }
 
-int OddContainer::move_tetromino()
+int AppliancesContainer::move_tetromino()
 {
 	erase_cur_tetromino();
 
@@ -106,9 +100,9 @@ int OddContainer::move_tetromino()
 			return 1;
 		}
 		(tetromino_y)--;
-		cout << m_cur_oddtetromino.get_shape() << m_cur_oddtetromino.get_angle();
+		cout << m_cur_app_tetromino.get_shape() << m_cur_app_tetromino.get_angle();
 		merge_tetromino();
-		m_cur_oddtetromino.set_shape(m_next_oddtetromino.get_shape());
+		m_cur_app_tetromino.set_shape(m_next_app_tetromino.get_shape());
 		make_next_tetromino();
 		//m_tetromino.set_next_shape(make_new_tetromino());
 
@@ -119,12 +113,12 @@ int OddContainer::move_tetromino()
 	return 0;
 }
 
-void OddContainer::rotate_tetromino()
+void AppliancesContainer::rotate_tetromino()
 {
-	m_cur_oddtetromino.set_angle((m_cur_oddtetromino.get_angle() + 1) % 4);
+	m_cur_app_tetromino.set_angle((m_cur_app_tetromino.get_angle() + 1) % 4);
 }
 
-bool OddContainer::strike_check()
+bool AppliancesContainer::strike_check()
 {
 	int i, j;
 	int block_dat;
@@ -143,7 +137,7 @@ bool OddContainer::strike_check()
 				block_dat = 0;
 
 
-			if ((block_dat == 1) && (m_cur_oddtetromino.get_tetromino()[i][j] == 1))                                                                     //좌측벽의 좌표를 빼기위함
+			if ((block_dat == 1) && (m_cur_app_tetromino.get_tetromino()[i][j] == 1))                                                                     //좌측벽의 좌표를 빼기위함
 			{
 				return 1;
 			}
@@ -152,21 +146,21 @@ bool OddContainer::strike_check()
 	return 0;
 }
 
-void OddContainer::merge_tetromino()
+void AppliancesContainer::merge_tetromino()
 {
 	int i, j;
 	for (i = 0; i < 4; i++)
 	{
 		for (j = 0; j < 4; j++)
 		{
-			m_total_block[tetromino_y + i][tetromino_x + j] |= m_cur_oddtetromino.get_tetromino()[i][j];
+			m_total_block[tetromino_y + i][tetromino_x + j] |= m_cur_app_tetromino.get_tetromino()[i][j];
 		}
 	}
 	check_full_line();
 	show_total_block();
 }
 
-void OddContainer::show_next_tetromino()
+void AppliancesContainer::show_next_tetromino()
 {
 	int i, j;
 	// 레벨에 해당하는 색상으로 바꾼후
@@ -190,10 +184,10 @@ void OddContainer::show_next_tetromino()
 	}
 	// 박스 안에 다음 블록의 모양을 출력
 	/*show_cur_tetromino(15,1);*/
-	show_tetromino(m_next_oddtetromino, 15, 1);
+	show_tetromino(m_next_app_tetromino, 15, 1);
 }
 
-void OddContainer::show_gamestat()
+void AppliancesContainer::show_gamestat()
 {
 	static int printed_text = 0;
 	setColor(GRAY);
@@ -209,8 +203,8 @@ void OddContainer::show_gamestat()
 
 
 	}
-	gotoxy(41, 7);
-	cout << m_level + 1;
+	gotoxy(35, 8);
+	cout << "소장님의 첫번째 미션 : 가전제품";
 	gotoxy(35, 13);
 	cout << stage_data[m_level].get_clear_line() - m_lines;
 }

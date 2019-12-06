@@ -44,7 +44,7 @@ void SpeedContainer::show_gamestat()
 
 	}
 	gotoxy(41, 7);
-	cout << m_level + 1;
+	cout << "갑자기 빨라지는 우주 쓰레기";
 	gotoxy(35, 13);
 	cout << stage_data[m_level].get_clear_line() - m_lines;
 }

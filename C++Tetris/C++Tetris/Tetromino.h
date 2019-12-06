@@ -37,7 +37,8 @@ public:
 	int get_angle() const;
 	//char* get_cur_tetromino() const;
 	virtual const char(&get_tetromino())[4][4];
-	void operator=(Tetromino&& copy);
+
+
 
 
 	
