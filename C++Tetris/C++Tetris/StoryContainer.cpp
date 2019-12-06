@@ -225,7 +225,7 @@ void StoryContainer::showStory1_1() //1단계 실패
 	printScript("그렇게 집에서 놀고 먹으며 쓰레기통이나 비우는 생활이 반복되었다...", GRAY,
 		"", GRAY,
 		"", GRAY);
-	//showRS();
+	showRS();
 }
 
 void StoryContainer::showStory2()
@@ -335,7 +335,7 @@ void StoryContainer::showStory2_1()
 	printScript("흠... 어쩔 수가 없구만... 딱 하루만이야.", GRAY,
 		"", GRAY,
 		"", GRAY);
-	//showRS();
+	showRS();
 }
 
 void StoryContainer::showStory3()
@@ -392,7 +392,7 @@ void StoryContainer::showStory3_1()
 	printScript("(그래...다시 한 번 해보자!)", BLUE,
 		"", GRAY,
 		"", GRAY);
-	//showRS();
+	showRS();
 }
 
 void StoryContainer::showStory4()
@@ -493,7 +493,7 @@ void StoryContainer::showStory4_1()
 	printScript("(소장님의 믿음에 보답하기 위해서라도 다시 한 번 해보자!)", BLUE,
 		"", GRAY,
 		"", GRAY);
-	//showRS();
+	showRS();
 }
 
 void StoryContainer::showStory5()
@@ -700,7 +700,7 @@ void StoryContainer::showStory5_1()
 	printScript("네! 열심히 훈련하겠습니다.", GRAY,
 		"", GRAY,
 		"(다행이다...)", BLUE);
-	//showRS();
+	showRS();
 }
 
 void StoryContainer::showStory6()
@@ -827,7 +827,7 @@ void StoryContainer::showStory6_1()
 	printScript("이미 우주로 나온 이상, 이번 기회에 최대한 해결해야 해요.", GRAY,
 		"모든 게 당신의 손에 달려있습니다.", GRAY,
 		"", GRAY);
-	//showRS();
+	showRS();
 }
 
 void StoryContainer::showStory7()
