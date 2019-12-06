@@ -118,8 +118,8 @@ void LogoContainer::show_logo()
 	cout << "бс";
 	Sleep(200);
 	setColor(DARK_YELLOW);
-	gotoxy(33, 4);
-	cout << "бсбсбс";
+	gotoxy(32, 4);
+	cout << " бсбсбс";
 	gotoxy(29, 5);
 	cout << "   бс";
 	gotoxy(29, 6);
