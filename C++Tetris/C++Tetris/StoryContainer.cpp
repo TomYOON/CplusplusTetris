@@ -289,22 +289,22 @@ void StoryContainer::showStory2_1()
 	showScreen();
 	showChar(character[10]);
 	printName("      김 쓰 봉");
-	printScript("(...긴장했더니 엄청 실수해버렸다.)", BLUE,
+	printScript("(...긴장했더니 엄청나게 실수해버렸다.)", BLUE,
 		"", GRAY,
 		"", GRAY);
 	showChar(character[19]);
 	printName("      소 장 님");
 	printScript("김쓰봉 군, 미안하지만 자네는 실수가 너무 많아.", GRAY,
 		"이렇게 해서는 우리와 일하기 어렵겠구만.", GRAY,
-		"자네 적성과는 안맞는 듯하니 다른 일을 알아보는 건 어떤가?", GRAY);
+		"자네 적성과는 안맞는 듯한데, 다른 일을 알아보는 건 어떤가?", GRAY);
 	showChar(character[5]);
 	printName("      김 쓰 봉");
 	printScript("안됩니다! 저는 꼭 이 일을 해야 한다구요!", GRAY,
 		"하루만 더 기회를 주십시오!", GRAY,
-		"", GRAY);
+		"(NASA에 가야한다구요...)", BLUE);
 	showChar(character[19]);
 	printName("      소 장 님");
-	printScript("흠... 어쩔 수 없구만... 딱 하루만이야.", GRAY,
+	printScript("흠... 어쩔 수가 없구만... 딱 하루만이야.", GRAY,
 		"", GRAY,
 		"", GRAY);
 	showRS();
@@ -316,7 +316,7 @@ void StoryContainer::showStory3()
 	showChar(character[21]);
 	printName("      소 장 님");
 	printScript("아니, 자네 처음치고는 아주 훌륭하구만!", GRAY,
-		"좋아, 내일부터 바로 출근하도록 해.", GRAY,
+		"좋아, 내일부터 바로 출근하도록 하게.", GRAY,
 		"", GRAY);
 	showChar(character[3]);
 	printName("      김 쓰 봉");
@@ -330,7 +330,7 @@ void StoryContainer::showStory3()
 		"", GRAY);
 	showChar(character[18]);
 	printName("      소 장 님");
-	printScript("이름만 들어서는 쉬워보이지만", GRAY,
+	printScript("의류 쓰레기가 이름만 들어서는 쉬워보이지만", GRAY,
 		"다양한 옷 모양 블럭들을 처리하는 게 그리 쉽지만은 않아서 그만두는 직원들도 많아...", GRAY,
 		"그 점은 각오되어 있겠지?", GRAY);
 	printName("      김 쓰 봉");
@@ -340,7 +340,7 @@ void StoryContainer::showStory3()
 		"", GRAY);
 	showChar(character[18]);
 	printName("      소 장 님");
-	printScript("각오가 마음에 드는군.", GRAY,
+	printScript("흠... 각오가 마음에 드는군.", GRAY,
 		"좋아, 그럼 잘 부탁하겠네.", GRAY,
 		"", GRAY);
 	showRS();
@@ -356,7 +356,7 @@ void StoryContainer::showStory3_1()
 		"", GRAY);
 	showChar(character[19]);
 	printName("      소 장 님");
-	printScript("내 뭐라 그랬는가... 힘들어질 거라고 말하지 않았는가...", GRAY,
+	printScript("내 뭐라 그랬는가... 쉽지 않을 거라고 말하지 않았는가...", GRAY,
 		"처음이니 그럴 수 있어. 곧 익숙해질거야.", GRAY,
 		"", GRAY);
 	showChar(character[8]);
@@ -372,12 +372,12 @@ void StoryContainer::showStory4()
 	showScreen();
 	showChar(character[21]);
 	printName("      소 장 님");
-	printScript("자네 정말 대단하구만! 내가 지금껏 가르쳐본 직원들 중 단연 최고야!", GRAY,
-		"", GRAY,
+	printScript("자네 정말 대단하구만! 이렇게 빨리 일을 배우다니.", GRAY,
+		"내가 지금껏 가르쳐본 직원들 중 단연 최고야!", GRAY,
 		"", GRAY);
 	showChar(character[2]);
 	printName("      김 쓰 봉");
-	printScript("감사합니다. 소장님의 도움 덕분입니다.", GRAY,
+	printScript("감사합니다. 소장님께서 잘 가르쳐주신 덕분입니다.", GRAY,
 		"", GRAY,
 		"", GRAY);
 	showChar(character[18]);
@@ -388,16 +388,16 @@ void StoryContainer::showStory4()
 	showChar(character[1]);
 	printName("      김 쓰 봉");
 	printScript("(그렇게 1년이 지났다. 그동안 나의 분리수거 스킬은 일취월장하였고,", BLUE,
-		"내 활약에 힘입어 광진구 분리수거 처리소의 명성은 전국에 알려졌다.)", BLUE,
+		"나의 활약에 힘입어 광진구 분리수거 처리소의 명성은 전국에 알려졌다.)", BLUE,
 		"", GRAY);
 	showChar(character[18]);
 	printName("      소 장 님");
 	printScript("김쓰봉 군, 내가 그동안의 성과를 인정받아", GRAY,
-		"이번에 서울시 분리수거 처리소의 소장으로 승진하게 되었네.", GRAY,
+		"이번에 서울시 분리수거 처리소의 소장으로 승진하게 되었다네.", GRAY,
 		"", GRAY);
 	showChar(character[2]);
 	printName("      김 쓰 봉");
-	printScript("정말 축하드립니다, 소장님.", GRAY,
+	printScript("이야~ 정말 축하드립니다, 소장님.", GRAY,
 		"", GRAY,
 		"", GRAY);
 	showChar(character[18]);
@@ -433,7 +433,7 @@ void StoryContainer::showStory4()
 	printName("      소 장 님");
 	printScript("오늘이 첫 출근이구만...", GRAY,
 		"서울시 처리소는 아무래도 국내에서 가장 규모가 큰 곳이다 보니", GRAY,
-		"공사현장에서 나온 건축 자재들이 많이 들어온다네.", GRAY);
+		"공사현장에서 나온 큼직큼직한 건축 자재들이 많이 들어온다네.", GRAY);
 	showChar(character[18]);
 	printName("      소 장 님");
 	printScript("초보자에게 쉬운 작업은 아니겠지만", GRAY,
