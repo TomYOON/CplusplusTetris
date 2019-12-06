@@ -31,17 +31,14 @@ int main(void) {
 	TrashContainer tc;
 	AppliancesContainer ac;
 	TrashPlusCloudContainer tpc;
-	/*
-	1단계 그냥
+	/*1단계 그냥
 	2단계 가전제품
 	3단계 의류
 	4단계 건축자재
 	5단계 우주 쓰레기 파편
 	6단계 5단계 + 장애물
-	7단계 6단계 + 속도변화
-	*/
+	7단계 6단계 + 속도변화*/
 	GameContainer* gcArray[] = { &g1 ,&ac,&cc,&oc, &tc,&tpc,  &sc};
-	
 	Stage stage;
 	TetrisPlayer storyMode(gcArray, 7);
 

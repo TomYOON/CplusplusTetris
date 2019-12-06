@@ -32,12 +32,6 @@ void TrashPlusCloudContainer::init()
 	//화면의 제일 밑의 줄은 1로 채운다.
 	for (int j = 0; j < 14; j++)
 		m_total_block[20][j] = 1;
-
-
-	/*m_level = 0;
-	m_lines = 0;*/
-	m_ab_x = 5;
-	m_ab_y = 1;
 }
 
 void TrashPlusCloudContainer::show_gamestat()
@@ -46,18 +40,22 @@ void TrashPlusCloudContainer::show_gamestat()
 	setColor(GRAY);
 	if (printed_text == 0)
 	{
-		gotoxy(35, 7);
-		cout << "STAGE";
+		gotoxy(m_ab_x + 30, m_ab_y + 8); // 35 7
+		cout << "목표:";
 
+		//gotoxy(35, 9);
+		//cout << "SCORE";
 
-
-		gotoxy(35, 12);
-		cout << "LINES";
+		gotoxy(m_ab_x + 30, m_ab_y + 15);  // 35 12
+		cout << "남은 쓰레기 양";
 
 
 	}
-	gotoxy(35, 8);
-	cout << "우주 쓰레기 + 우주 가스";
-	gotoxy(35, 13);
-	cout << stage_data[m_level].get_clear_line() - m_lines;
+	gotoxy(m_ab_x + 30, m_ab_y + 10); // 41 7
+	cout << "분리수거를 하자.";
+	//gotoxy(35, 10);
+	//cout << m_score;
+	gotoxy(m_ab_x + 30, m_ab_y + 17); // 35 13
+	cout << stage_data[m_level].get_clear_line() - m_lines << " KG";
 }
+

@@ -111,6 +111,8 @@ void TetrisPlayer::showModeUp()
 	cur_mode->set_lines(0);
 	cur_mode->show_total_block(); //스테이지에 대한 출력변화를 바로 보여주기위해 추가
 	cur_mode->show_gamestat();
+	cur_mode->make_cur_tetromino();// 블록 모양 생성
+	cur_mode->show_next_tetromino(); // 다음 블록 모양 출력
 }
 
 void TetrisPlayer::showGameOver(GameContainer* cur_mode)

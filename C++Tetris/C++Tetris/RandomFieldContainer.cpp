@@ -41,24 +41,27 @@ void RandomFieldContainer::init()
 
 void RandomFieldContainer::show_gamestat()
 {
-static int printed_text = 0;
-setColor(GRAY);
-if (printed_text == 0)
-{
-	gotoxy(35, 7);
-	cout << "STAGE";
+	static int printed_text = 0;
+	setColor(GRAY);
+	if (printed_text == 0)
+	{
+		gotoxy(m_ab_x + 30, m_ab_y + 8); // 35 7
+		cout << "목표:";
+
+		//gotoxy(35, 9);
+		//cout << "SCORE";
+
+		gotoxy(m_ab_x + 30, m_ab_y + 15);  // 35 12
+		cout << "남은 쓰레기 양";
 
 
-
-	gotoxy(35, 12);
-	cout << "LINES";
-
-
-}
-gotoxy(41, 7);
-cout << m_level + 1;
-gotoxy(35, 13);
-cout << stage_data[m_level].get_clear_line() - m_lines;
+	}
+	gotoxy(m_ab_x + 30, m_ab_y + 10); // 41 7
+	cout << "분리수거를 하자.";
+	//gotoxy(35, 10);
+	//cout << m_score;
+	gotoxy(m_ab_x + 30, m_ab_y + 17); // 35 13
+	cout << stage_data[m_level].get_clear_line() - m_lines << " KG";
 }
 
 void RandomFieldContainer::awlfield_init()
