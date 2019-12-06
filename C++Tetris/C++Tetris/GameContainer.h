@@ -10,7 +10,7 @@ protected:
 	int tetromino_x;
 	int tetromino_y;
 	// 각 gameContainer 가 출력할 스테이지 개수
-	int m_maxStage = 2; 
+	int m_maxStage = 1; 
 	int m_level;
 	int m_score;
 	int m_lines;

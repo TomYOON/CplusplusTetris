@@ -41,11 +41,9 @@ int main(void) {
 	7단계 6단계 + 속도변화
 	*/
 	GameContainer* gcArray[] = { &g1 ,&ac,&cc,&oc, &tc,&tpc,  &sc};
-	GameContainer* levelgc[1] = { &g1 };
 	
 	Stage stage;
-	TetrisPlayer storyMode(gcArray, 3);
-	TetrisPlayer levelMode(levelgc, 1);
+	TetrisPlayer storyMode(gcArray, 7);
 
 	while (1)
 	{
