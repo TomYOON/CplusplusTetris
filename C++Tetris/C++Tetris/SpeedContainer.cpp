@@ -40,14 +40,14 @@ void SpeedContainer::show_gamestat()
 		//cout << "SCORE";
 
 		gotoxy(m_ab_x + 30, m_ab_y + 15);  // 35 12
-		cout << "남은 쓰레기 양";
+		cout << "남은 수거 횟수";
 
 
 	}
 	gotoxy(m_ab_x + 30, m_ab_y + 10); // 41 7
-	cout << "분리수거를 하자.";
+	cout << "중력권에 들어가 속도가 변하는 쓰레기들을 처리하자!";
 	//gotoxy(35, 10);
 	//cout << m_score;
 	gotoxy(m_ab_x + 30, m_ab_y + 17); // 35 13
-	cout << stage_data[m_level].get_clear_line() - m_lines << " KG";
+	cout << stage_data[m_level].get_clear_line() - m_lines << " 회";
 }
