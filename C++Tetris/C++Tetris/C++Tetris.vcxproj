@@ -31,6 +31,7 @@
     <ClCompile Include="RandomFieldContainer.cpp" />
     <ClCompile Include="SelectLevelContainer.cpp" />
     <ClCompile Include="SelectModeContainer.cpp" />
+    <ClCompile Include="SpeedContainer.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StoryContainer.cpp" />
     <ClCompile Include="test_main.cpp" />
@@ -52,6 +53,7 @@
     <ClInclude Include="RandomFieldContainer.h" />
     <ClInclude Include="SelectLevelContainer.h" />
     <ClInclude Include="SelectModeContainer.h" />
+    <ClInclude Include="SpeedContainer.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StoryContainer.h" />
     <ClInclude Include="TetrisPlayer.h" />

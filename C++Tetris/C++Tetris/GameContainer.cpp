@@ -96,7 +96,7 @@ void GameContainer::init()
 		m_total_block[20][j] = 1;
 
 	
-	m_level = 0;
+	//m_level = 0;
 	m_lines = 0;
 	m_ab_x = 5;
 	m_ab_y = 1;

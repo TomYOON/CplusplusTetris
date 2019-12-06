@@ -49,6 +49,7 @@
     <ClCompile Include="tetrisCreatedByC.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SpeedContainer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Container.h">
@@ -90,6 +91,7 @@
     <ClInclude Include="BgmPlayer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="SpeedContainer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="소스 파일">

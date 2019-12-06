@@ -9,6 +9,7 @@
 #include "OddContainer.h"
 #include "RandomFieldContainer.h"
 #include "SelectModeContainer.h"
+#include "SpeedContainer.h"
 using namespace std;
 
 const int LEVEL_MODE = 1;
@@ -20,8 +21,9 @@ int main(void) {
 	GameContainer g1;
 	OddContainer O1;
 	RandomFieldContainer r1;
+	SpeedContainer sc;
 	SelectModeContainer smc;
-	GameContainer* gcArray[4] = {&O1,&r1, &r1, & r1};
+	GameContainer* gcArray[4] = { &sc , &O1,&r1,&r1};
 	GameContainer* levelgc[1] = { &g1 };
 	Stage stage;
 	TetrisPlayer storyMode(gcArray, 3);
@@ -31,13 +33,6 @@ int main(void) {
 	{
 		lc.show_logo();
 		storyMode.run();
-		/*smc.show_select_mode();
-		while (true){
-			if (smc.get_mode() == LEVEL_MODE) levelMode.run();
-			else if (smc.get_mode() == STORY_MODE) storyMode.run();
-			else continue;
-			break;
-		}*/
 	}
 	return 0;
 }

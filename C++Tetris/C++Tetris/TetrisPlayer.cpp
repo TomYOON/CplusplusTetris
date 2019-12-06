@@ -91,6 +91,7 @@ void TetrisPlayer::showStageUp(GameContainer* cur_mode)
 		sc.startStory(m_storyCnt);
 		system("cls");
 	}
+	cur_mode->init();
 	cur_mode->set_level(cur_mode->get_level() + 1);
 	cur_mode->set_lines(0);
 	cur_mode->show_total_block(); //스테이지에 대한 출력변화를 바로 보여주기위해 추가
@@ -204,12 +205,11 @@ void TetrisPlayer::run()
 					}
 				}
 				if (m_keytemp == 32)   getKeySpace(cur_mode);//스페이스바를 눌렀을때
-				if (m_keytemp == m_CHEAT_KEY) showStageUp(cur_mode);
 			}
-			Stage cur_stage = cur_mode->get_stage_data()[cur_mode->get_level()];
+			Stage cur_stage = this->cur_mode->get_stage_data()[this->cur_mode->get_level()];
 			showScreen(cur_mode, cur_stage.get_speed());
 			if (isStageClear(cur_stage, cur_mode) || m_keytemp == m_CHEAT_KEY) {
-				if (m_keytemp == m_CHEAT_KEY) m_keytemp = 'a';
+ 				if (m_keytemp == m_CHEAT_KEY) m_keytemp = 'a';
 				if (cur_mode->get_level() + 1 < cur_mode->get_max_stage()) showStageUp(cur_mode);
 				else {
 					m_modeCnt++;
