@@ -182,6 +182,7 @@ void StoryContainer::showStory1() //1단계 시작전
 	printScript("오늘도 할 일 없는 나는 우리집 쓰레기통을 들고 길을 나선다.", GRAY,
 		"", GRAY,
 		"", GRAY);
+	showRS();
 	bp.stop();
 }
 
@@ -196,6 +197,7 @@ void StoryContainer::showStory1_1() //1단계 실패
 	printScript("그렇게 집에서 놀고 먹으며 쓰레기통이나 비우는 생활이 반복되었다...", GRAY,
 		"", GRAY,
 		"", GRAY);
+	showRS();
 }
 
 void StoryContainer::showStory2()
@@ -274,6 +276,7 @@ void StoryContainer::showStory2()
 	printScript("(좋아, 이번 기회에 내 가치를 증명해내는 거야!)", BLUE,
 		"", GRAY,
 		"", GRAY);
+	showRS();
 }
 
 void StoryContainer::showStory2_1()
@@ -299,6 +302,7 @@ void StoryContainer::showStory2_1()
 	printScript("흠... 어쩔 수 없구만... 딱 하루만이야.", GRAY,
 		"", GRAY,
 		"", GRAY);
+	showRS();
 }
 
 void StoryContainer::showStory3()
@@ -329,6 +333,7 @@ void StoryContainer::showStory3()
 	printScript("각오가 마음에 드는군.", GRAY,
 		"좋아, 그럼 잘 부탁하겠네.", GRAY,
 		"", GRAY);
+	showRS();
 }
 
 void StoryContainer::showStory3_1()
@@ -349,6 +354,7 @@ void StoryContainer::showStory3_1()
 	printScript("(그래...다시 한 번 해보자!)", BLUE,
 		"", GRAY,
 		"", GRAY);
+	showRS();
 }
 
 void StoryContainer::showStory4()
@@ -423,6 +429,7 @@ void StoryContainer::showStory4()
 	printScript("(오늘이 첫 출근.... 할 수 있다, 김쓰봉!)", BLUE,
 		"", GRAY,
 		"", GRAY);
+	showRS();
 }
 
 void StoryContainer::showStory4_1()
@@ -443,6 +450,7 @@ void StoryContainer::showStory4_1()
 	printScript("(소장님의 믿음에 보답하기 위해서라도 다시 한 번 해보자!)", BLUE,
 		"", GRAY,
 		"", GRAY);
+	showRS();
 }
 
 void StoryContainer::showStory5()
@@ -618,6 +626,7 @@ void StoryContainer::showStory5()
 	printScript("네, 좋습니다!", GRAY,
 		"", GRAY,
 		"", GRAY);
+	showRS();
 }
 
 void StoryContainer::showStory5_1()
@@ -643,6 +652,7 @@ void StoryContainer::showStory5_1()
 	printScript("네! 열심히 훈련하겠습니다.", GRAY,
 		"", GRAY,
 		"(다행이다...)", BLUE);
+	showRS();
 }
 
 void StoryContainer::showStory6()
@@ -743,6 +753,7 @@ void StoryContainer::showStory6()
 	printScript("커렉트. 지금까지와는 다른 방식이지만 기본기가 탄탄하다면 문제 없을 거에요.", GRAY,
 		"그럼 지금부터 작업 시작하죠.", GRAY,
 		"", GRAY);
+	showRS();
 }
 
 void StoryContainer::showStory6_1()
@@ -768,6 +779,7 @@ void StoryContainer::showStory6_1()
 	printScript("이미 우주로 나온 이상, 이번 기회에 최대한 해결해야 해요.", GRAY,
 		"모든 게 당신의 손에 달려있습니다.", GRAY,
 		"", GRAY);
+	showRS();
 }
 
 void StoryContainer::showStory7()
@@ -837,6 +849,7 @@ void StoryContainer::showStory7()
 	printScript("아직 시간은 있습니다. 빠르게 해결한다면 아무 문제 없을 거에요.", GRAY,
 		"미스터 봉, 당신의 능력을 보여주세요!", GRAY,
 		"", GRAY);
+	showRS();
 }
 
 void StoryContainer::showStory7_1()
@@ -857,6 +870,7 @@ void StoryContainer::showStory7_1()
 	printScript("(그래, 지금은 눈 앞의 임무에 집중하자!)", BLUE,
 		"", GRAY,
 		"", BLUE);
+	showRS();
 }
 
 void StoryContainer::showStory8()
