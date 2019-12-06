@@ -57,6 +57,7 @@
     <ClCompile Include="TrashTetromino.cpp" />
     <ClCompile Include="TrashContainer.cpp" />
     <ClCompile Include="AppliancesTetromino.cpp" />
+    <ClCompile Include="AppliancesContainer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Container.h">
@@ -104,6 +105,7 @@
     <ClInclude Include="TrashTetromino.h" />
     <ClInclude Include="TrashContainer.h" />
     <ClInclude Include="AppliancesTetromino.h" />
+    <ClInclude Include="AppliancesContainer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="소스 파일">

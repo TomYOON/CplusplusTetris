@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AppliancesContainer.cpp" />
     <ClCompile Include="ClothContainer.cpp" />
     <ClCompile Include="ClothTetromino.cpp" />
     <ClCompile Include="AppliancesTetromino.cpp" />
@@ -49,6 +50,7 @@
     <ClCompile Include="소스.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AppliancesContainer.h" />
     <ClInclude Include="BgmPlayer.h" />
     <ClInclude Include="ClothContainer.h" />
     <ClInclude Include="ClothTetromino.h" />
