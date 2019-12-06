@@ -3,6 +3,7 @@
 Tetromino::Tetromino()
 	:m_shape(0),m_angle(0)
 {
+
 }
 
 Tetromino::~Tetromino()

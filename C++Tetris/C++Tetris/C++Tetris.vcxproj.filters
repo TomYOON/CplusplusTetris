@@ -54,6 +54,7 @@
     <ClCompile Include="ClothContainer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="TrashTetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Container.h">
@@ -98,6 +99,7 @@
     <ClInclude Include="SpeedContainer.h" />
     <ClInclude Include="ClothTetromino.h" />
     <ClInclude Include="ClothContainer.h" />
+    <ClInclude Include="TrashTetromino.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="소스 파일">
