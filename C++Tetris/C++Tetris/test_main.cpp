@@ -30,13 +30,14 @@ int main(void) {
 	while (1)
 	{
 		lc.show_logo();
-		smc.show_select_mode();
+		storyMode.run();
+		/*smc.show_select_mode();
 		while (true){
 			if (smc.get_mode() == LEVEL_MODE) levelMode.run();
 			else if (smc.get_mode() == STORY_MODE) storyMode.run();
 			else continue;
 			break;
-		}
+		}*/
 	}
 	return 0;
 }
