@@ -49,16 +49,30 @@
     <ClCompile Include="tetrisCreatedByC.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SpeedContainer.cpp" />
-    <ClCompile Include="ClothTetromino.cpp" />
     <ClCompile Include="ClothContainer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="TrashTetromino.cpp" />
-    <ClCompile Include="TrashContainer.cpp" />
-    <ClCompile Include="AppliancesTetromino.cpp" />
-    <ClCompile Include="AppliancesContainer.cpp" />
-    <ClCompile Include="TrashPlusCloudContainer.cpp" />
+    <ClCompile Include="TrashTetromino.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TrashPlusCloudContainer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TrashContainer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SpeedContainer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ClothTetromino.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AppliancesTetromino.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AppliancesContainer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Container.h">
@@ -100,14 +114,30 @@
     <ClInclude Include="BgmPlayer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="SpeedContainer.h" />
-    <ClInclude Include="ClothTetromino.h" />
-    <ClInclude Include="ClothContainer.h" />
-    <ClInclude Include="TrashTetromino.h" />
-    <ClInclude Include="TrashContainer.h" />
-    <ClInclude Include="AppliancesTetromino.h" />
-    <ClInclude Include="AppliancesContainer.h" />
-    <ClInclude Include="TrashPlusCloudContainer.h" />
+    <ClInclude Include="AppliancesContainer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AppliancesTetromino.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ClothContainer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ClothTetromino.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedContainer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TrashContainer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TrashPlusCloudContainer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TrashTetromino.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="소스 파일">
