@@ -1,4 +1,5 @@
-﻿  TetrisPlayer.cpp
+﻿  OddContainer.cpp
   test_main.cpp
   코드를 생성하고 있습니다...
+C:\Users\yoon\Documents\GitHub\CplusplusTetris\C++Tetris\C++Tetris\OddContainer.cpp(70,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
   C++Tetris.vcxproj -> C:\Users\yoon\Documents\GitHub\CplusplusTetris\C++Tetris\x64\Debug\C++Tetris.exe
