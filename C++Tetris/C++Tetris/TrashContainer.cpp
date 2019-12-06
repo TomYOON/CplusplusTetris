@@ -203,8 +203,8 @@ void TrashContainer::show_gamestat()
 
 
 	}
-	gotoxy(41, 7);
-	cout << m_level + 1;
+	gotoxy(35, 8);
+	cout << "우주 쓰레기";
 	gotoxy(35, 13);
 	cout << stage_data[m_level].get_clear_line() - m_lines;
 }

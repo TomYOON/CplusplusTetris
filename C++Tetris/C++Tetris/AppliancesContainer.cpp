@@ -203,8 +203,8 @@ void AppliancesContainer::show_gamestat()
 
 
 	}
-	gotoxy(41, 7);
-	cout << m_level + 1;
+	gotoxy(35, 8);
+	cout << "소장님의 첫번째 미션 : 가전제품";
 	gotoxy(35, 13);
 	cout << stage_data[m_level].get_clear_line() - m_lines;
 }
