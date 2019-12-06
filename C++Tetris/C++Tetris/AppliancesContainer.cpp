@@ -200,7 +200,7 @@ void AppliancesContainer::show_gamestat()
 		//cout << "SCORE";
 
 		gotoxy(m_ab_x + 30, m_ab_y + 15);  // 35 12
-		cout << "남은 쓰레기 양";
+		cout << "남은 수거 횟수";
 
 
 	}
@@ -209,5 +209,5 @@ void AppliancesContainer::show_gamestat()
 	//gotoxy(35, 10);
 	//cout << m_score;
 	gotoxy(m_ab_x + 30, m_ab_y + 17); // 35 13
-	cout << stage_data[m_level].get_clear_line() - m_lines << " KG";
+	cout << stage_data[m_level].get_clear_line() - m_lines << " 회";
 }
