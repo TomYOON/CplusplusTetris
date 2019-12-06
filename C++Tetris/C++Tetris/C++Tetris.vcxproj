@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ClothContainer.cpp" />
+    <ClCompile Include="ClothTetromino.cpp" />
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="GameContainer.cpp" />
     <ClCompile Include="LogoContainer.cpp" />
@@ -41,10 +43,13 @@
     </ClCompile>
     <ClCompile Include="TetrisPlayer.cpp" />
     <ClCompile Include="Tetromino.cpp" />
+    <ClCompile Include="TrashTetromino.cpp" />
     <ClCompile Include="소스.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BgmPlayer.h" />
+    <ClInclude Include="ClothContainer.h" />
+    <ClInclude Include="ClothTetromino.h" />
     <ClInclude Include="Container.h" />
     <ClInclude Include="GameContainer.h" />
     <ClInclude Include="LogoContainer.h" />
@@ -58,6 +63,7 @@
     <ClInclude Include="StoryContainer.h" />
     <ClInclude Include="TetrisPlayer.h" />
     <ClInclude Include="Tetromino.h" />
+    <ClInclude Include="TrashTetromino.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
