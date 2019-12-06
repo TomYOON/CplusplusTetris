@@ -234,7 +234,14 @@ void TetrisPlayer::run()
 				m_is_gameOver = 0;
 				cur_mode->setColor(GRAY);
 				cur_mode->init();//게임오버에서 탈출시 다시 초기화
-				return;
+				//return;
+
+				cur_mode->show_total_block();  // 인터페이스 형성
+				cur_mode->make_cur_tetromino();// 블록 모양 생성
+				cur_mode->show_next_tetromino(); // 다음 블록 모양 출력
+
+				cur_mode->tetromino_start();
+				cur_mode->show_gamestat();
 			}
 
 			cur_mode->gotoxy(77, 23);
