@@ -168,8 +168,8 @@ void StoryContainer::showStory1() //1단계 시작전
 		"나이는 30세. 백수다.", GRAY,
 		"", GRAY);
 	showChar(character[7]);
-	printScript("인생은 이름 따라간다고 했던가.", GRAY,
-		"잘하는 것이라고는 분리수거 뿐이다.", GRAY,
+	printScript("사람 인생은 이름 따라 흘러간다고 했던가.", GRAY,
+		"내가 잘하는 것이라고는 분리수거 뿐이다.", GRAY,
 		"그러니 취직이 될리가 있나.", GRAY);
 	showChar(character[2]);
 	printScript("하지만 분리수거 하나만큼은 확실히 자신있다.", GRAY,
@@ -177,7 +177,7 @@ void StoryContainer::showStory1() //1단계 시작전
 		"", GRAY);
 	showChar(character[1]);
 	printScript("쓰레기 버리기의 포인트는 '빈틈없이 꽉꽉 눌러담기' 이다.", GRAY,
-		"그래야만 수거하시는 분들이 편하게 수거할 수 있다.", GRAY,
+		"빈틈이 있으면 기계가 인식을 못해 수거해가지 않기 때문이다.", GRAY,
 		"", GRAY);
 	printScript("오늘도 할 일 없는 나는 우리집 쓰레기통을 들고 길을 나선다.", GRAY,
 		"", GRAY,
@@ -192,7 +192,7 @@ void StoryContainer::showStory1_1() //1단계 실패
 	showChar(character[11]);
 	printName("      김 쓰 봉");
 	printScript("오늘은 분리수거마저도 제대로 못하는 날이다.", GRAY,
-		"나는 언제쯤 어엿한 사람 노릇을 할 수 있을까...?", GRAY,
+		"나는 아무 짝에도 쓸모 없는 사람인걸까...?", GRAY,
 		"", GRAY);
 	printScript("그렇게 집에서 놀고 먹으며 쓰레기통이나 비우는 생활이 반복되었다...", GRAY,
 		"", GRAY,
@@ -254,7 +254,7 @@ void StoryContainer::showStory2()
 		"", GRAY);
 	showChar(character[17]);
 	printName("      소 장 님");
-	printScript("흠... 마침 가전제품 처리 한 자리가 비어있긴 한데... 잘할 자신은 있나?", GRAY,
+	printScript("흠... 마침 가전제품 처리요원 한 자리가 비어있긴 한데... 잘할 자신은 있나?", GRAY,
 		"", GRAY,
 		"", GRAY);
 	showChar(character[9]);
@@ -274,7 +274,7 @@ void StoryContainer::showStory2()
 		"", GRAY);
 	showChar(character[18]);
 	printName("      소 장 님");
-	printScript("가전제품은 직사각형 모양 블럭들만 처리하면 되니까, 평소보다 더 편할 수도 있어.", GRAY,
+	printScript("가전제품은 직사각형 모양 블럭들만 처리하면 되니까, 오히려 평소보다 더 편할 수도 있어.", GRAY,
 		"처음이라고 긴장하지 말고 어디 한번 잘해보라구.", GRAY,
 		"", GRAY);
 	showChar(character[9]);
