@@ -52,7 +52,7 @@ void TrashPlusCloudContainer::show_gamestat()
 
 	}
 	gotoxy(m_ab_x + 30, m_ab_y + 10); // 41 7
-	cout << "장애물들의 방해를 피해 쓰레기를 처리하자!";
+	cout << "장애물들의 방해를 피해, 우주쓰레기를 처리하자!";
 	//gotoxy(35, 10);
 	//cout << m_score;
 	gotoxy(m_ab_x + 30, m_ab_y + 17); // 35 13
