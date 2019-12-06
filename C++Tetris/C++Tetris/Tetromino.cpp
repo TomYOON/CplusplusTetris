@@ -8,6 +8,7 @@ Tetromino::Tetromino()
 
 Tetromino::~Tetromino()
 {
+
 }
  
 void Tetromino::set_shape(const int& shape)

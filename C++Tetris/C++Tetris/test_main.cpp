@@ -11,6 +11,7 @@
 #include "SelectModeContainer.h"
 #include "SpeedContainer.h"
 #include "ClothContainer.h"
+#include "TrashContainer.h"
 using namespace std;
 
 const int LEVEL_MODE = 1;
@@ -25,7 +26,8 @@ int main(void) {
 	SpeedContainer sc;
 	SelectModeContainer smc;
 	ClothContainer cc;
-	GameContainer* gcArray[5] = { &cc,&O1, &sc , &r1,&r1};
+	TrashContainer tc;
+	GameContainer* gcArray[] = {&tc, &cc,&O1, &sc , &r1,&r1};
 	GameContainer* levelgc[1] = { &g1 };
 	
 	Stage stage;

@@ -43,6 +43,7 @@
     </ClCompile>
     <ClCompile Include="TetrisPlayer.cpp" />
     <ClCompile Include="Tetromino.cpp" />
+    <ClCompile Include="TrashContainer.cpp" />
     <ClCompile Include="TrashTetromino.cpp" />
     <ClCompile Include="소스.cpp" />
   </ItemGroup>
@@ -63,6 +64,7 @@
     <ClInclude Include="StoryContainer.h" />
     <ClInclude Include="TetrisPlayer.h" />
     <ClInclude Include="Tetromino.h" />
+    <ClInclude Include="TrashContainer.h" />
     <ClInclude Include="TrashTetromino.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
