@@ -61,34 +61,19 @@ void OddContainer::show_tetromino(OddTetromino& tetromino, const int& x, const i
 
 void OddContainer::make_cur_tetromino()
 {
-	int i;
-	i = rand() % 100;
-	int shape;
-	if (i <= odd_per) {      //oddTetromino가 나올 확률
-		shape = rand() % 3;
-	}
-	else {
-		shape = rand() % 7 + 3;
-	}
+	int shape =rand() % 7;
 	m_cur_oddtetromino.set_shape(shape);
 }
 
 void OddContainer::make_next_tetromino()
 {
 	int i;
-	i = rand() % 100;
-	int shape;
-	if (i <= odd_per) {      //oddTetromino가 나올 확률
-		shape = rand() % 3;
-	}
-	else {
-		shape = rand() % 7 + 3;
-	}
+	int shape = rand() % 7;
+	
 	m_next_oddtetromino.set_shape(shape);
 	m_next_oddtetromino.set_angle(0);
 	show_next_tetromino();
 
-	shape = (rand() % 6) + 1;      //shape에는 1~6의 값이 들어감
 }
 
 void OddContainer::erase_cur_tetromino()

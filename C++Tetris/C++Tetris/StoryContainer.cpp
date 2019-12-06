@@ -162,6 +162,34 @@ void StoryContainer::showStory1() //1단계 시작전
 {
 	bp.play("humor");
 	showScreen();
+	printName("    프 롤 로 그");
+	printScript("때는 바야흐로 2050년,", GREEN,
+		"", GRAY,
+		"", GRAY);
+	printScript("자신들의 편리함만을 좇는 인류의 이기심은 끝이 없었고,", GREEN,
+		"", GRAY,
+		"", GRAY);
+	printScript("지구의 쓰레기 문제는 날이 갈수록 심각해져만 갔다.", GREEN,
+		"", GRAY,
+		"", GRAY);
+	printScript("멈출 줄 모르고 쏟아져 나오는 쓰레기들은", GREEN,
+		"", GRAY,
+		"", GRAY);
+	printScript("지구의 땅, 바다, 그리고 나아가 우주를 뒤덮었다.", GREEN,
+		"", GRAY,
+		"", GRAY);
+	printScript("지구는 그야말로 '쓰레기 세상'이었다.", GREEN,
+		"", GRAY,
+		"", GRAY);
+	printScript("하지만 난세는 영웅을 낳는다고 했던가.", GREEN,
+		"", GRAY,
+		"", GRAY);
+	printScript("이곳 광진구의 한 아파트 방구석에서,", GREEN,
+		"", GRAY,
+		"", GRAY);
+	printScript("지구를 구할 영웅이 태어나려 하고 있었으니...", GREEN,
+		"", GRAY,
+		"", GRAY);
 	showChar(character[1]);
 	printName("      김 쓰 봉");
 	printScript("내 이름은 김쓰봉(쓰레기봉투라는 뜻).", GRAY,
@@ -1028,7 +1056,7 @@ void StoryContainer::showStory8()
 		"", GRAY,
 		"", BLUE);
 	eraseChar();
-	printName("");
+	printName("    에 필 로 그");
 	printScript("동네 백수에서 지구를 구한 영웅이 된 김쓰봉.", GREEN,
 		"", GREEN,
 		"", GRAY);

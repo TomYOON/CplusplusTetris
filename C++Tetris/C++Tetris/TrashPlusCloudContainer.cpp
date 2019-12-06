@@ -58,3 +58,25 @@ void TrashPlusCloudContainer::show_gamestat()
 	gotoxy(m_ab_x + 30, m_ab_y + 17); // 35 13
 	cout << stage_data[m_level].get_clear_line() - m_lines << " KG";
 }
+
+void TrashPlusCloudContainer::show_gamestat()
+{
+	static int printed_text = 0;
+	setColor(GRAY);
+	if (printed_text == 0)
+	{
+		gotoxy(35, 7);
+		cout << "STAGE";
+
+
+
+		gotoxy(35, 12);
+		cout << "LINES";
+
+
+	}
+	gotoxy(35, 8);
+	cout << "우주 쓰레기 + 우주 가스";
+	gotoxy(35, 13);
+	cout << stage_data[m_level].get_clear_line() - m_lines;
+}
