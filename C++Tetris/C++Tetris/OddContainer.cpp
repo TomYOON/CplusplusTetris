@@ -14,27 +14,24 @@ void OddContainer::show_tetromino(OddTetromino& tetromino, const int& x, const i
 	switch (tetromino.get_shape())
 	{
 	case 0: 
-	case 1:
-	case 2:
-	case 3:
 		setColor(RED); // odd tetromino
 		break;
-	case 4: //네모모양 ㅁ
+	case 1: //네모모양 ㅁ
 		setColor(BLUE);
 		break;
-	case 5: //'ㅓ' 모양
+	case 2: //'ㅓ' 모양
 		setColor(SKY_BLUE);
 		break;
-	case 6: //'ㄱ'모양
+	case 3: //'ㄱ'모양
 		setColor(WHITE);
 		break;
-	case 7: //'ㄴ' 모양
+	case 4: //'ㄴ' 모양
 		setColor(YELLOW);
 		break;
-	case 8: //'Z' 모양
+	case 5: //'Z' 모양
 		setColor(VOILET);
 		break;
-	case 9: //'S' 모양
+	case 6: //'S' 모양
 		setColor(GREEN);
 		break;
 	}
