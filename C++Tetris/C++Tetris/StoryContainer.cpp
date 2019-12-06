@@ -1056,7 +1056,7 @@ void StoryContainer::showStory8()
 		"", GRAY,
 		"", BLUE);
 	eraseChar();
-	printName("");
+	printName("    에 필 로 그");
 	printScript("동네 백수에서 지구를 구한 영웅이 된 김쓰봉.", GREEN,
 		"", GREEN,
 		"", GRAY);
