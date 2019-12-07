@@ -1,4 +1,5 @@
 #include "TetrisPlayer.h"
+#include "BgmPlayer.h"
 #include <conio.h>
 #include <iostream>
 #include <Windows.h>
@@ -104,12 +105,14 @@ void TetrisPlayer::showStageUp(GameContainer* cur_mode)
 
 void TetrisPlayer::showModeUp()
 {
+	bp.stop();
 	m_storyCnt++;
 	system("cls");
 	if (typeid(cur_mode) != typeid(GameContainer&)) {
 		sc.startStory(m_storyCnt);
 		system("cls");
 	}
+	bp.play("인게임");
 	cur_mode = m_gcArray[m_modeCnt];
 	cur_mode->init();
 	cur_mode->set_lines(0);
@@ -121,6 +124,7 @@ void TetrisPlayer::showModeUp()
 
 void TetrisPlayer::showGameOver(GameContainer* cur_mode)
 {
+	bp.stop();
 	if (typeid(cur_mode) == typeid(GameContainer&)) {
 		cur_mode->show_gameover();
 	}
@@ -133,6 +137,7 @@ void TetrisPlayer::showGameOver(GameContainer* cur_mode)
 	;  //게임오버 메세지 출력
 	
 	cur_mode->setColor(GRAY);
+	bp.play("인게임");
 }
 
 bool TetrisPlayer::isStoryEnd()
@@ -178,7 +183,7 @@ void TetrisPlayer::run()
 			system("cls");
 		}
 		
-
+		bp.play("인게임");
 		cur_mode->show_total_block();  // 인터페이스 형성
 		cur_mode->make_cur_tetromino();// 블록 모양 생성
 		cur_mode->show_next_tetromino(); // 다음 블록 모양 출력

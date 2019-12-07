@@ -161,6 +161,8 @@ void StoryContainer::printScript(string script1, const int& color1, string scrip
 void StoryContainer::showStory1() //1단계 시작전
 {
 	showScreen();
+
+	bp.play("급박");
 	printName("    프 롤 로 그");
 	printScript("때는 바야흐로 2050년,", GREEN,
 		"", GRAY,
@@ -189,6 +191,7 @@ void StoryContainer::showStory1() //1단계 시작전
 	printScript("지구를 구할 영웅이 태어나려 하고 있었으니...", GREEN,
 		"", GRAY,
 		"", GRAY);
+	bp.stop();
 	bp.play("humor");
 	showChar(character[1]);
 	printName("      김 쓰 봉");
@@ -216,6 +219,7 @@ void StoryContainer::showStory1() //1단계 시작전
 
 void StoryContainer::showStory1_1() //1단계 실패
 {
+	bp.play("허탈");
 	showScreen();
 	showChar(character[11]);
 	printName("      김 쓰 봉");
@@ -226,10 +230,12 @@ void StoryContainer::showStory1_1() //1단계 실패
 		"", GRAY,
 		"", GRAY);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory2()
 {
+	bp.play("일상");
 	showScreen();
 	showChar(character[2]);
 	printName("      김 쓰 봉");
@@ -310,10 +316,12 @@ void StoryContainer::showStory2()
 		"", GRAY,
 		"", GRAY);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory2_1()
 {
+	bp.play("허탈");
 	showScreen();
 	showChar(character[10]);
 	printName("      김 쓰 봉");
@@ -336,10 +344,12 @@ void StoryContainer::showStory2_1()
 		"", GRAY,
 		"", GRAY);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory3()
 {
+	bp.play("희망");
 	showScreen();
 	showChar(character[21]);
 	printName("      소 장 님");
@@ -372,10 +382,12 @@ void StoryContainer::showStory3()
 		"좋아, 그럼 잘 부탁하겠네.", GRAY,
 		"", GRAY);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory3_1()
 {
+	bp.play("허탈");
 	showScreen();
 	showChar(character[11]);
 	printName("      김 쓰 봉");
@@ -393,10 +405,12 @@ void StoryContainer::showStory3_1()
 		"", GRAY,
 		"", GRAY);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory4()
 {
+	bp.play("희망");
 	showScreen();
 	showChar(character[21]);
 	printName("      소 장 님");
@@ -473,10 +487,12 @@ void StoryContainer::showStory4()
 		"", GRAY,
 		"", GRAY);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory4_1()
 {
+	bp.play("허탈");
 	showScreen();
 	showChar(character[10]);
 	printName("      김 쓰 봉");
@@ -494,10 +510,12 @@ void StoryContainer::showStory4_1()
 		"", GRAY,
 		"", GRAY);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory5()
 {
+	bp.play("희망");
 	showScreen();
 	showChar(character[1]);
 	printName("      김 쓰 봉");
@@ -530,6 +548,8 @@ void StoryContainer::showStory5()
 		"", GRAY,
 		"", GRAY);
 	showChar(character[1]);
+	bp.stop();
+	bp.play("애절");
 	printName("      김 쓰 봉");
 	printScript("저 이번달까지만 하고 그만두겠습니다.", GRAY,
 		"", GRAY,
@@ -584,6 +604,8 @@ void StoryContainer::showStory5()
 	printScript("(그렇게 직장을 떠났다.)", BLUE,
 		"", GRAY,
 		"", GRAY);
+	bp.stop();
+	bp.play("일상");
 	printScript("(NASA에 원서를 넣고 한달 뒤에 답장이 왔다.)", BLUE,
 		"", GRAY,
 		"", GRAY);
@@ -675,10 +697,12 @@ void StoryContainer::showStory5()
 		"", GRAY,
 		"", GRAY);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory5_1()
 {
+	bp.play("허탈");
 	showScreen();
 	showChar(character[26]);
 	printName("  브 라 운 박 사");
@@ -701,10 +725,12 @@ void StoryContainer::showStory5_1()
 		"", GRAY,
 		"(다행이다...)", BLUE);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory6()
 {
+	bp.play("희망");
 	showScreen();
 	showChar(character[25]);
 	printName("  브 라 운 박 사");
@@ -734,6 +760,9 @@ void StoryContainer::showStory6()
 	printScript("네, 맡겨만 주십시오!", GRAY,
 		"", GRAY,
 		"", BLUE);
+	bp.stop();
+
+	bp.play("급박");
 	eraseChar();
 	printName("");
 	printScript("", BLUE,
@@ -802,10 +831,12 @@ void StoryContainer::showStory6()
 		"그럼 지금부터 작업 시작하죠.", GRAY,
 		"", GRAY);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory6_1()
 {
+	bp.play("허탈");
 	showScreen();
 	showChar(character[15]);
 	printName("      김 쓰 봉");
@@ -828,10 +859,12 @@ void StoryContainer::showStory6_1()
 		"모든 게 당신의 손에 달려있습니다.", GRAY,
 		"", GRAY);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory7()
 {
+	bp.play("급박");
 	showScreen();
 	showChar(character[25]);
 	printName("  브 라 운 박 사");
@@ -898,10 +931,12 @@ void StoryContainer::showStory7()
 		"미스터 봉, 당신의 능력을 보여주세요!", GRAY,
 		"", GRAY);
 	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory7_1()
 {
+	bp.play("허탈");
 	showScreen();
 	showChar(character[15]);
 	printName("      김 쓰 봉");
@@ -918,11 +953,13 @@ void StoryContainer::showStory7_1()
 	printScript("(그래, 지금은 눈 앞의 임무에 집중하자!)", BLUE,
 		"", GRAY,
 		"", BLUE);
-	//showRS();
+	showRS();
+	bp.stop();
 }
 
 void StoryContainer::showStory8()
 {
+	bp.play("엔딩");
 	showScreen();
 	showChar(character[12]);
 	printName("      김 쓰 봉");
@@ -1069,6 +1106,7 @@ void StoryContainer::showStory8()
 	printScript("", BLUE,
 		"                                                    - 끝 -", GREEN,
 		"", GRAY);
+	bp.stop();
 }
 
 void StoryContainer::startStory(int stage)

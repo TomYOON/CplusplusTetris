@@ -22,6 +22,7 @@ private:
 	int m_modeCnt;
 	int m_storyCnt;
 	GameContainer* cur_mode;
+	BgmPlayer bp;
 	void init();
 	void getKeyUp(GameContainer* cur_mode);
 	void getKeyDown(GameContainer* cur_mode);

@@ -1,4 +1,5 @@
 #include "LogoContainer.h"
+#include "BgmPlayer.h"
 #include <conio.h>
 #include <iostream>
 #include <Windows.h>
@@ -71,6 +72,8 @@ LogoContainer::~LogoContainer()
 
 void LogoContainer::show_logo()
 {
+	BgmPlayer bp;
+	bp.play("∏ﬁ¿Œ");
 	int i, j;
 	setColor(GRAY);
 	gotoxy(10, 2);
@@ -245,4 +248,5 @@ void LogoContainer::show_logo()
 
 	_getche();
 	system("cls");
+	bp.stop();
 }
