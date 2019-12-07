@@ -1,1 +1,29 @@
-﻿  C++Tetris.vcxproj -> C:\Users\user\Source\Repos\CplusplusTetris\C++Tetris\x64\Debug\C++Tetris.exe
+﻿  AppliancesContainer.cpp
+  ClothContainer.cpp
+  ClothTetromino.cpp
+  AppliancesTetromino.cpp
+  Container.cpp
+  GameContainer.cpp
+  LogoContainer.cpp
+  OddContainer.cpp
+  OddTetromino.cpp
+  RandomFieldContainer.cpp
+C:\Users\user\Source\Repos\CplusplusTetris\C++Tetris\C++Tetris\OddContainer.cpp(67,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+  SelectLevelContainer.cpp
+  SelectModeContainer.cpp
+  SpeedContainer.cpp
+  Stage.cpp
+  StoryContainer.cpp
+  test_main.cpp
+  TetrisPlayer.cpp
+  Tetromino.cpp
+  TrashContainer.cpp
+  TrashPlusCloudContainer.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  TrashTetromino.cpp
+  소스.cpp
+  코드를 생성하고 있습니다...
+C:\Users\user\Source\Repos\CplusplusTetris\C++Tetris\C++Tetris\RandomFieldContainer.cpp(10,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+  LINK : C:\Users\user\Source\Repos\CplusplusTetris\C++Tetris\x64\Debug\C++Tetris.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+  C++Tetris.vcxproj -> C:\Users\user\Source\Repos\CplusplusTetris\C++Tetris\x64\Debug\C++Tetris.exe
