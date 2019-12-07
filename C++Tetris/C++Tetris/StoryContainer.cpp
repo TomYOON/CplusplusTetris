@@ -918,7 +918,7 @@ void StoryContainer::showStory7_1()
 	printScript("(그래, 지금은 눈 앞의 임무에 집중하자!)", BLUE,
 		"", GRAY,
 		"", BLUE);
-	//showRS();
+	showRS();
 }
 
 void StoryContainer::showStory8()
