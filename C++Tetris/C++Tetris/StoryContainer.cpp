@@ -85,7 +85,7 @@ void StoryContainer::showRS()
 	cout << "    ■   ■   ■       ■■■■   ■   ■     ■                ";
 	gotoxy(28, 15);
 	cout << "   ■    ■  ■■■  ■      ■  ■■■      ■     ■  ■  ■  ";
-	Sleep(3000);
+	Sleep(1500);
 	setColor(BLUE);
 	gotoxy(28, 11);
 	cout << "    ■■■  ■■■■      ■      ■■■    ■■■■  ■  ■  ■";
@@ -97,7 +97,7 @@ void StoryContainer::showRS()
 	cout << "      ■    ■      ■■■■   ■   ■      ■                  ";
 	gotoxy(28, 15);
 	cout << "■■■     ■     ■      ■  ■    ■     ■     ■  ■  ■    ";
-	Sleep(2000);
+	Sleep(1000);
 	gotoxy(0, 0);
 }
 
@@ -160,7 +160,6 @@ void StoryContainer::printScript(string script1, const int& color1, string scrip
 
 void StoryContainer::showStory1() //1단계 시작전
 {
-	bp.play("humor");
 	showScreen();
 	printName("    프 롤 로 그");
 	printScript("때는 바야흐로 2050년,", GREEN,
@@ -190,6 +189,7 @@ void StoryContainer::showStory1() //1단계 시작전
 	printScript("지구를 구할 영웅이 태어나려 하고 있었으니...", GREEN,
 		"", GRAY,
 		"", GRAY);
+	bp.play("humor");
 	showChar(character[1]);
 	printName("      김 쓰 봉");
 	printScript("내 이름은 김쓰봉(쓰레기봉투라는 뜻).", GRAY,

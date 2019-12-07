@@ -210,6 +210,6 @@ void ClothContainer::show_gamestat()
 	//gotoxy(35, 10);
 	//cout << m_score;
 	gotoxy(m_ab_x + 30, m_ab_y + 17); // 35 13
-	cout << stage_data[m_level].get_clear_line() - m_lines << " KG";
+	cout << stage_data[m_level].get_clear_line() - m_lines << " ȸ";
 }
 
