@@ -20,6 +20,7 @@ const int LEVEL_MODE = 1;
 const int STORY_MODE = 2;
 
 int main(void) {
+	system("mode con cols=120 lines=39 | title 쓰레기왕 김쓰봉"); // 콘솔사이즈 지정 cols = 가로, lines = 세로
 	//RandomFieldContainer r1;
 	LogoContainer lc;
 	SelectLevelContainer slc;

@@ -1,10 +1,2 @@
-﻿  OddContainer.cpp
-  SpeedContainer.cpp
-  TrashContainer.cpp
-  TrashPlusCloudContainer.cpp
-  TrashTetromino.cpp
-  test_main.cpp
-  코드를 생성하고 있습니다...
-C:\Users\yoon\Documents\GitHub\CplusplusTetris\C++Tetris\C++Tetris\OddContainer.cpp(67,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
-  LINK : C:\Users\yoon\Documents\GitHub\CplusplusTetris\C++Tetris\x64\Debug\C++Tetris.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+﻿  test_main.cpp
   C++Tetris.vcxproj -> C:\Users\yoon\Documents\GitHub\CplusplusTetris\C++Tetris\x64\Debug\C++Tetris.exe
