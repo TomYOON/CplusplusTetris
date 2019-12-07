@@ -12,21 +12,6 @@ void SpeedContainer::change_random_speed()
 	}
 }
 
-void SpeedContainer::merge_tetromino()
-{
-	change_random_speed();
-	int i, j;
-	for (i = 0; i < 4; i++)
-	{
-		for (j = 0; j < 4; j++)
-		{
-			m_total_block[tetromino_y + i][tetromino_x + j] |= m_cur_tetromino.get_tetromino()[i][j];
-		}
-	}
-	check_full_line();
-	show_total_block();
-}
-
 void SpeedContainer::show_gamestat()
 {
 	static int printed_text = 0;

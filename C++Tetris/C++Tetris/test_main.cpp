@@ -20,11 +20,12 @@ const int LEVEL_MODE = 1;
 const int STORY_MODE = 2;
 
 int main(void) {
+	system("mode con cols=120 lines=39 | title 쓰레기왕 김쓰봉"); // 콘솔사이즈 지정 cols = 가로, lines = 세로
+	//RandomFieldContainer r1;
 	LogoContainer lc;
 	SelectLevelContainer slc;
 	GameContainer g1;
 	OddContainer oc;
-	RandomFieldContainer r1;
 	SpeedContainer sc;
 	SelectModeContainer smc;
 	ClothContainer cc;
@@ -38,7 +39,7 @@ int main(void) {
 	5단계 우주 쓰레기 파편
 	6단계 5단계 + 장애물
 	7단계 6단계 + 속도변화*/
-	GameContainer* gcArray[] = { &g1 ,&ac,&cc,&oc, &tc,&tpc,  &sc};
+	GameContainer* gcArray[] = { &g1,&ac,&cc,&oc,&tc,&tpc,&sc};
 	Stage stage;
 	TetrisPlayer storyMode(gcArray, 7);
 
