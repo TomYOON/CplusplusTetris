@@ -186,7 +186,7 @@ void StoryContainer::showStory1() //1단계 시작전
 	printScript("이곳 광진구의 한 아파트 방구석에서,", GREEN,
 		"", GRAY,
 		"", GRAY);
-	printScript("지구를 구할 영웅이 태어나려 하고 있었으니...", GREEN,
+	printScript("지구를 구할 영웅이 탄생하려 하고 있었으니...", GREEN,
 		"", GRAY,
 		"", GRAY);
 	bp.play("humor");
