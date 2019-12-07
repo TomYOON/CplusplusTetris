@@ -6,10 +6,16 @@ using namespace std;
 void SpeedContainer::change_random_speed()
 {
 	srand((unsigned int)time(NULL));
-	int speed[4]{ 1,20,30,40 };
+	int speed[4]{ 7,20,30,40 };
 	for (int i = 0; i < 1; i++){
 		stage_data[i].set_speed(speed[rand() % 3]);
 	}
+}
+void SpeedContainer::merge_tetromino()
+{
+
+	change_random_speed();
+	TrashPlusCloudContainer::merge_tetromino();
 }
 
 void SpeedContainer::show_gamestat()
