@@ -85,7 +85,7 @@ void StoryContainer::showRS()
 	cout << "    бс   бс   бс       бсбсбсбс   бс   бс     бс                ";
 	gotoxy(28, 15);
 	cout << "   бс    бс  бсбсбс  бс      бс  бсбсбс      бс     бс  бс  бс  ";
-	Sleep(3000);
+	Sleep(2500);
 	setColor(BLUE);
 	gotoxy(28, 11);
 	cout << "    бсбсбс  бсбсбсбс      бс      бсбсбс    бсбсбсбс  бс  бс  бс";
@@ -97,7 +97,7 @@ void StoryContainer::showRS()
 	cout << "      бс    бс      бсбсбсбс   бс   бс      бс                  ";
 	gotoxy(28, 15);
 	cout << "бсбсбс     бс     бс      бс  бс    бс     бс     бс  бс  бс    ";
-	Sleep(2000);
+	Sleep(1500);
 	gotoxy(0, 0);
 }
 
