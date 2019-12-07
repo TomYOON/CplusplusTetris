@@ -20,11 +20,11 @@ const int LEVEL_MODE = 1;
 const int STORY_MODE = 2;
 
 int main(void) {
+	//RandomFieldContainer r1;
 	LogoContainer lc;
 	SelectLevelContainer slc;
 	GameContainer g1;
 	OddContainer oc;
-	RandomFieldContainer r1;
 	SpeedContainer sc;
 	SelectModeContainer smc;
 	ClothContainer cc;
@@ -38,7 +38,7 @@ int main(void) {
 	5단계 우주 쓰레기 파편
 	6단계 5단계 + 장애물
 	7단계 6단계 + 속도변화*/
-	GameContainer* gcArray[] = { &g1 ,&ac,&cc,&oc, &tc,&tpc,  &sc};
+	GameContainer* gcArray[] = { &g1,&ac,&cc,&oc,&tc,&tpc,&sc};
 	Stage stage;
 	TetrisPlayer storyMode(gcArray, 7);
 
